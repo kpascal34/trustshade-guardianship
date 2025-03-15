@@ -1,9 +1,8 @@
 
 import { Link } from "react-router-dom";
-import { Shield, Users, BadgeCheck, Clock } from "lucide-react";
+import { Shield, Clock, UserCheck, FileSearch } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 import TestimonialCard from "../components/TestimonialCard";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const testimonials = [
   {
@@ -24,132 +23,88 @@ const testimonials = [
   }
 ];
 
-const services = [
-  {
-    id: "manned-guarding",
-    title: "Manned Guarding",
-    icon: <Shield className="h-8 w-8" />,
-    description: "Professional security personnel providing 24/7 protection for your premises.",
-  },
-  {
-    id: "door-supervision",
-    title: "Door Supervision",
-    icon: <Users className="h-8 w-8" />,
-    description: "Licensed door supervisors for venues and events management.",
-  },
-  {
-    id: "event-security",
-    title: "Event Security",
-    icon: <BadgeCheck className="h-8 w-8" />,
-    description: "Comprehensive security solutions for events of all sizes.",
-  },
-  {
-    id: "security-consultation",
-    title: "Security Consultation",
-    icon: <Clock className="h-8 w-8" />,
-    description: "Expert security risk assessment and consultation services.",
-  }
-];
-
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gray-900 text-white py-24">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <img 
-            src="/lovable-uploads/752946cd-c6fd-4a3b-bb77-81c318aa8f5d.png" 
-            alt="Security professionals" 
-            className="w-full h-full object-cover"
-          />
+      <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Your Trusted Partner in Security Solutions
+          </h1>
+          <p className="text-lg mb-8 text-gray-700">
+            At Fortis Security, we specialize in bespoke security services 
+            tailored to your needs. Operating across Yorkshire and 
+            Manchester, we ensure a safe environment for businesses and 
+            events.
+          </p>
+          <Link 
+            to="/contact" 
+            className="inline-block bg-black text-white py-3 px-8 rounded font-medium hover:bg-gray-800 transition-colors"
+          >
+            FOLLOW US
+          </Link>
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Your Trusted Partner in Security Solutions
-            </h1>
-            <p className="text-lg mb-8 text-gray-200">
-              At Fortis Security, we specialize in bespoke security services 
-              tailored to your needs. Operating across Yorkshire and 
-              Manchester, we ensure a safe environment for businesses and 
-              events.
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-block bg-white text-black py-3 px-8 rounded font-medium hover:bg-gray-200 transition-colors"
-            >
-              GET IN TOUCH
-            </Link>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <img 
+              src="/lovable-uploads/358ef451-408f-420f-ab7a-d6c124a1d2ea.png" 
+              alt="Modern surveillance monitoring center" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Modern surveillance monitoring center</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/90d901a8-50b5-4b12-8b30-6df65c2e9195.png" 
+              alt="Professional venue security team" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Professional venue security team</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/42a457dd-f80a-48ed-9113-048f186d77b1.png" 
+              alt="Security patrol service in action" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Security patrol service in action</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/ecd5bc12-c538-48d1-84dc-c781cb06e7c0.png" 
+              alt="Corporate security solutions" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Corporate security solutions</p>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We offer a comprehensive range of security services designed to meet your specific requirements.
+      {/* About Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img 
+              src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" 
+              alt="Fortis Security Logo" 
+              className="max-w-xs mx-auto md:mx-0" 
+            />
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-6">About Us</h2>
+            <p className="mb-4">
+              At Fortis, we have extensive experience as a leading security company in
+              Yorkshire and Greater Manchester. Our commitment to excellence
+              distinguishes us in a competitive market and allows us to provide outstanding
+              service.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service) => (
-              <ServiceCard 
-                key={service.id}
-                id={service.id}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Security Team</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our highly-trained professionals are committed to providing exceptional security services.
+            <p>
+              We aim to positively change the security sector by prioritizing fair
+              remuneration and better working conditions for our staff. Our investment in
+              training and ongoing support fosters a positive workplace culture, attracting
+              and retaining top talent to benefit our clients and communities.
             </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src="/lovable-uploads/b7c3164f-b1af-4276-8bd5-89aa2cac72c9.png" 
-                alt="Security Professional" 
-                className="w-full h-72 object-cover object-center"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-2">Door Supervision</h3>
-                <p className="text-gray-600">Our professional door supervisors maintain a safe environment at venues across Yorkshire and Manchester.</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src="/lovable-uploads/6ef64e34-56f1-43e7-8113-743151f38524.png" 
-                alt="Event Security" 
-                className="w-full h-72 object-cover object-center"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-2">Event Security</h3>
-                <p className="text-gray-600">We provide comprehensive security solutions for events of all types and sizes.</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img 
-                src="/lovable-uploads/48449466-0403-4059-8440-4f66d4ab41c8.png" 
-                alt="Venue Security" 
-                className="w-full h-72 object-cover object-center"
-              />
-              <div className="p-6">
-                <h3 className="font-bold text-xl mb-2">Venue Security</h3>
-                <p className="text-gray-600">Our team ensures safety and security at venues and special events.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -157,7 +112,7 @@ const Home = () => {
       {/* Testimonials Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Client Testimonials</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
@@ -166,24 +121,6 @@ const Home = () => {
                 author={testimonial.author}
               />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-black text-white">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Ready to Secure Your Business?</h2>
-            <p className="text-lg mb-8">
-              Contact us today to discuss your security needs and find out how we can help protect your business, events, or premises.
-            </p>
-            <Link 
-              to="/contact" 
-              className="inline-block bg-white text-black py-3 px-8 rounded font-medium hover:bg-gray-200 transition-colors"
-            >
-              GET IN TOUCH
-            </Link>
           </div>
         </div>
       </section>
