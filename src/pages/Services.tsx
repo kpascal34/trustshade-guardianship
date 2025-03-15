@@ -1,146 +1,151 @@
 
-import { Shield, Users, CalendarClock, FileSearch } from "lucide-react";
-import HeroSection from "../components/HeroSection";
-import ServiceCard from "../components/ServiceCard";
-
-const services = [
-  {
-    id: "door-supervision",
-    title: "Door Supervision",
-    description: "Professional door supervisors for venues, clubs, and events. We ensure orderly entry and maintain a safe environment.",
-    icon: <Shield className="h-8 w-8 text-fortis-light-blue" />,
-    fullDescription: "Our SIA licensed door supervisors are trained to provide a professional, friendly yet firm approach to door security. They maintain safety at venues through access control, conflict management, and ensuring compliance with licensing regulations.",
-  },
-  {
-    id: "manned-guarding",
-    title: "Manned Guarding",
-    description: "Reliable security personnel protecting your property, assets, and people around the clock with vigilance and professionalism.",
-    icon: <Users className="h-8 w-8 text-fortis-light-blue" />,
-    fullDescription: "Our manned guarding services provide a visible security presence to deter criminal activity and protect your premises. All security officers are SIA licensed and trained to handle various situations while maintaining a professional appearance.",
-  },
-  {
-    id: "event-security",
-    title: "Event Security",
-    description: "Comprehensive security solutions for events of all sizes, ensuring attendees enjoy a safe and secure experience.",
-    icon: <CalendarClock className="h-8 w-8 text-fortis-light-blue" />,
-    fullDescription: "From small corporate functions to large festivals, our event security team ensures the safety of attendees and staff. Services include crowd management, access control, emergency response planning, and VIP protection.",
-  },
-  {
-    id: "risk-assessments",
-    title: "Risk Assessments",
-    description: "Detailed evaluation of potential security threats and vulnerabilities, with tailored recommendations to mitigate risks.",
-    icon: <FileSearch className="h-8 w-8 text-fortis-light-blue" />,
-    fullDescription: "Our experienced security consultants conduct thorough evaluations of your premises to identify potential vulnerabilities. Following the assessment, we provide detailed recommendations to enhance your security infrastructure and protocols.",
-  },
-];
+import { Link } from "react-router-dom";
+import { MapPin, Shield, Clock, UserCheck } from "lucide-react";
 
 const Services = () => {
+  const services = [
+    {
+      id: "manned-guarding",
+      title: "Manned Guarding",
+      icon: <Shield className="h-6 w-6 text-white" />,
+      description: "Professional security personnel providing 24/7 protection for your premises.",
+      color: "bg-blue-600",
+    },
+    {
+      id: "door-supervision",
+      title: "Door Supervision",
+      icon: <UserCheck className="h-6 w-6 text-blue-600" />,
+      description: "Licensed door supervisors for venues and events management.",
+    },
+    {
+      id: "event-security",
+      title: "Event Security",
+      icon: <Clock className="h-6 w-6 text-blue-600" />,
+      description: "Comprehensive security solutions for events of all sizes.",
+    },
+    {
+      id: "risk-assessment",
+      title: "Risk Assessment",
+      icon: <Shield className="h-6 w-6 text-blue-600" />,
+      description: "Expert security risk assessment and consultation services.",
+    },
+  ];
+
   return (
-    <div className="min-h-screen">
-      <HeroSection
-        title="Our Security Services"
-        subtitle="Comprehensive security solutions tailored to your specific needs"
-        backgroundImage="/services-hero.jpg"
-        height="h-[60vh]"
-      />
-
-      {/* Services Overview */}
-      <section className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Security Solutions We Offer</h2>
-          <p className="section-subtitle">
-            Fortis Security provides a range of professional security services to protect your people, property, and assets.
-          </p>
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="w-full bg-black text-white py-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div></div>
+          <div className="flex items-center space-x-4">
+            <Link to="/" className="hover:text-gray-300">Home</Link>
+            <Link to="/about" className="hover:text-gray-300">About</Link>
+            <Link to="/services" className="text-white font-bold">Services</Link>
+            <Link to="/contact" className="hover:text-gray-300">Contact</Link>
+            <Link to="/login" className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Log In</Link>
+          </div>
         </div>
+      </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {services.map((service) => (
-            <div key={service.id} className="bg-white p-6 rounded-lg shadow-md flex flex-col h-full">
-              <div className="flex items-start mb-4">
-                <div className="bg-fortis-light-blue/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mr-4">
-                  {service.icon}
+      {/* Services Hero Section */}
+      <section className="py-16 container mx-auto px-4 text-center">
+        <h1 className="text-5xl font-bold mb-6 text-gray-900">Our Services</h1>
+        <p className="max-w-3xl mx-auto text-lg text-gray-700">
+          At Fortis Security, we provide tailored security services to meet your needs. 
+          Our experienced team ensures that each solution offers the best security and 
+          peace of mind.
+        </p>
+      </section>
+
+      {/* Services Grid */}
+      <section className="container mx-auto px-4 pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="p-6">
+                <div className={`mb-4 ${index === 0 ? service.color : 'bg-gray-100'} w-full h-40 flex items-center justify-center rounded-md`}>
+                  {index === 0 ? (
+                    service.icon
+                  ) : (
+                    <img src={`/placeholder.svg`} alt={service.title} className="h-6 w-6" />
+                  )}
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2 text-fortis-dark-blue">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
-                </div>
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.description}</p>
+                <Link 
+                  to={`/services/${service.id}`}
+                  className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 inline-block"
+                >
+                  Learn More
+                </Link>
               </div>
-              <p className="text-gray-600 mt-4 flex-grow">{service.fullDescription}</p>
-              <a 
-                href={`/services/${service.id}`} 
-                className="mt-4 inline-block text-fortis-light-blue hover:text-fortis-dark-blue font-medium"
-              >
-                Learn more about {service.title} →
-              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section className="bg-gray-50 py-16 md:py-24">
+      {/* Footer */}
+      <footer className="bg-black text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-fortis-dark-blue mb-6 text-center">Our Approach to Security</h2>
-            <p className="text-gray-600 mb-8 text-center">
-              At Fortis Security, we believe that effective security is about more than just having a physical presence. It's about understanding your specific needs and creating tailored solutions that address them.
-            </p>
-
-            <div className="space-y-8">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-fortis-dark-blue mb-3">1. Consultation</h3>
-                <p className="text-gray-600">
-                  We begin by thoroughly understanding your security concerns, requirements, and objectives through detailed consultation.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-fortis-dark-blue mb-3">2. Assessment</h3>
-                <p className="text-gray-600">
-                  Our security experts conduct a comprehensive assessment of your premises, identifying potential vulnerabilities and risks.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-fortis-dark-blue mb-3">3. Custom Solution</h3>
-                <p className="text-gray-600">
-                  Based on our findings, we develop a tailored security solution that addresses your specific needs and challenges.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-fortis-dark-blue mb-3">4. Implementation</h3>
-                <p className="text-gray-600">
-                  We deploy our trained security personnel and implement the agreed security measures with minimal disruption to your operations.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold text-fortis-dark-blue mb-3">5. Ongoing Evaluation</h3>
-                <p className="text-gray-600">
-                  We continuously monitor and evaluate the effectiveness of our security services, making adjustments as necessary to ensure optimal protection.
-                </p>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li><Link to="/" className="text-gray-300 hover:text-white">Home</Link></li>
+                <li><Link to="/about" className="text-gray-300 hover:text-white">About</Link></li>
+                <li><Link to="/services" className="text-gray-300 hover:text-white">Services</Link></li>
+                <li><Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Resources</h3>
+              <ul className="space-y-2">
+                <li><Link to="/faq" className="text-gray-300 hover:text-white">FAQ</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li><Link to="/terms-of-service" className="text-gray-300 hover:text-white">Terms of Service</Link></li>
+                <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white">Privacy Policy</Link></li>
+                <li><Link to="/cookies-policy" className="text-gray-300 hover:text-white">Cookies Policy</Link></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Contact</h3>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-2" />
+                  <span>Yorkshire & Greater Manchester</span>
+                </li>
+                <li>info@fortissecured.co.uk</li>
+                <li>077762 853255</li>
+                <li className="flex space-x-2 mt-4">
+                  <a href="#" className="bg-blue-800 p-1 rounded">
+                    <span className="sr-only">Facebook</span>
+                    <div className="h-4 w-4 bg-white"></div>
+                  </a>
+                  <a href="#" className="bg-blue-400 p-1 rounded">
+                    <span className="sr-only">Twitter</span>
+                    <div className="h-4 w-4 bg-white"></div>
+                  </a>
+                  <a href="#" className="bg-blue-600 p-1 rounded">
+                    <span className="sr-only">LinkedIn</span>
+                    <div className="h-4 w-4 bg-white"></div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
+          
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p>© 2025 Fortis Security. All rights reserved.</p>
+          </div>
         </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-fortis-dark-blue text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Need a custom security solution?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Our team of security experts is ready to help you develop a comprehensive security strategy tailored to your specific requirements.
-          </p>
-          <a 
-            href="/contact" 
-            className="inline-block px-8 py-3 bg-fortis-light-blue hover:bg-white hover:text-fortis-dark-blue text-white font-semibold rounded-md transition-colors"
-          >
-            Contact Us Today
-          </a>
-        </div>
-      </section>
+      </footer>
     </div>
   );
 };
