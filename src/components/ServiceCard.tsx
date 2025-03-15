@@ -12,7 +12,7 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ id, title, description, icon }: ServiceCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100">
       <div className="bg-fortis-light-blue/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
         {icon}
       </div>
@@ -20,8 +20,7 @@ const ServiceCard = ({ id, title, description, icon }: ServiceCardProps) => {
       <p className="text-gray-600 mb-4 flex-grow">{description}</p>
       <Button 
         asChild 
-        variant="outline" 
-        className="mt-auto group border-fortis-light-blue text-fortis-dark-blue hover:bg-fortis-light-blue hover:text-white"
+        className="mt-auto group bg-fortis-dark-blue hover:bg-fortis-light-blue text-white"
       >
         <Link to={`/services/${id}`} className="flex items-center">
           Learn More

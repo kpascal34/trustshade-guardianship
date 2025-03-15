@@ -1,11 +1,14 @@
+
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -19,26 +22,34 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-  return <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
+
+  return (
+    <header className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center" onClick={closeMenu}>
-          <h1 className="text-2xl font-bold text-fortis-dark-blue">
-            FORTIS <span className="text-fortis-light-blue">SECURITY</span>
-          </h1>
+          <img 
+            src="/lovable-uploads/afe08786-8e54-4ea0-b2ed-edd00df60c9e.png" 
+            alt="Fortis Security Logo"
+            className="h-12"
+          />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link to="/" className="text-gray-700 hover:text-fortis-light-blue font-medium transition-colors">
-        </Link>
+            Home
+          </Link>
           <Link to="/about" className="text-gray-700 hover:text-fortis-light-blue font-medium transition-colors">
-        </Link>
+            About
+          </Link>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -67,10 +78,11 @@ const Navbar = () => {
           </DropdownMenu>
 
           <Link to="/contact" className="text-gray-700 hover:text-fortis-light-blue font-medium transition-colors">
-        </Link>
+            Contact
+          </Link>
 
           <Button asChild className="bg-fortis-light-blue hover:bg-fortis-dark-blue">
-            
+            <Link to="/contact">Get a Quote</Link>
           </Button>
         </nav>
 
@@ -81,7 +93,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && <div className="md:hidden bg-white w-full py-4 shadow-md animate-fade-in">
+      {isMenuOpen && (
+        <div className="md:hidden bg-white w-full py-4 shadow-md animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <Link to="/" className="text-gray-700 hover:text-fortis-light-blue font-medium py-2 transition-colors" onClick={closeMenu}>
               Home
@@ -119,7 +132,10 @@ const Navbar = () => {
               <Link to="/contact">Get a Quote</Link>
             </Button>
           </div>
-        </div>}
-    </header>;
+        </div>
+      )}
+    </header>
+  );
 };
+
 export default Navbar;

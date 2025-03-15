@@ -1,52 +1,37 @@
 
-import { Link } from "react-router-dom";
-import { MapPin, Shield, Clock, UserCheck } from "lucide-react";
+import { Shield, UserCheck, Clock } from "lucide-react";
+import ServiceCard from "../components/ServiceCard";
 
 const Services = () => {
   const services = [
     {
-      id: "manned-guarding",
-      title: "Manned Guarding",
-      icon: <Shield className="h-6 w-6 text-white" />,
-      description: "Professional security personnel providing 24/7 protection for your premises.",
-      color: "bg-blue-600",
-    },
-    {
       id: "door-supervision",
       title: "Door Supervision",
-      icon: <UserCheck className="h-6 w-6 text-blue-600" />,
+      icon: <UserCheck className="h-6 w-6 text-fortis-light-blue" />,
       description: "Licensed door supervisors for venues and events management.",
+    },
+    {
+      id: "manned-guarding",
+      title: "Manned Guarding",
+      icon: <Shield className="h-6 w-6 text-fortis-light-blue" />,
+      description: "Professional security personnel providing 24/7 protection for your premises.",
     },
     {
       id: "event-security",
       title: "Event Security",
-      icon: <Clock className="h-6 w-6 text-blue-600" />,
+      icon: <Clock className="h-6 w-6 text-fortis-light-blue" />,
       description: "Comprehensive security solutions for events of all sizes.",
     },
     {
-      id: "risk-assessment",
-      title: "Risk Assessment",
-      icon: <Shield className="h-6 w-6 text-blue-600" />,
+      id: "risk-assessments",
+      title: "Risk Assessments",
+      icon: <Shield className="h-6 w-6 text-fortis-light-blue" />,
       description: "Expert security risk assessment and consultation services.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="w-full bg-black text-white py-4">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div></div>
-          <div className="flex items-center space-x-4">
-            <Link to="/" className="hover:text-gray-300">Home</Link>
-            <Link to="/about" className="hover:text-gray-300">About</Link>
-            <Link to="/services" className="text-white font-bold">Services</Link>
-            <Link to="/contact" className="hover:text-gray-300">Contact</Link>
-            <Link to="/login" className="bg-blue-500 text-white px-4 py-1 rounded-md hover:bg-blue-600">Log In</Link>
-          </div>
-        </div>
-      </header>
-
       {/* Services Hero Section */}
       <section className="py-16 container mx-auto px-4 text-center">
         <h1 className="text-5xl font-bold mb-6 text-gray-900">Our Services</h1>
@@ -61,91 +46,53 @@ const Services = () => {
       <section className="container mx-auto px-4 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="p-6">
-                <div className={`mb-4 ${index === 0 ? service.color : 'bg-gray-100'} w-full h-40 flex items-center justify-center rounded-md`}>
-                  {index === 0 ? (
-                    service.icon
-                  ) : (
-                    <img src={`/placeholder.svg`} alt={service.title} className="h-6 w-6" />
-                  )}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <Link 
-                  to={`/services/${service.id}`}
-                  className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 inline-block"
-                >
-                  Learn More
-                </Link>
-              </div>
-            </div>
+            <ServiceCard 
+              key={service.id}
+              id={service.id}
+              title={service.title}
+              description={service.description}
+              icon={service.icon}
+            />
           ))}
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link to="/" className="text-gray-300 hover:text-white">Home</Link></li>
-                <li><Link to="/about" className="text-gray-300 hover:text-white">About</Link></li>
-                <li><Link to="/services" className="text-gray-300 hover:text-white">Services</Link></li>
-                <li><Link to="/contact" className="text-gray-300 hover:text-white">Contact</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Resources</h3>
-              <ul className="space-y-2">
-                <li><Link to="/faq" className="text-gray-300 hover:text-white">FAQ</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li><Link to="/terms-of-service" className="text-gray-300 hover:text-white">Terms of Service</Link></li>
-                <li><Link to="/privacy-policy" className="text-gray-300 hover:text-white">Privacy Policy</Link></li>
-                <li><Link to="/cookies-policy" className="text-gray-300 hover:text-white">Cookies Policy</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  <span>Yorkshire & Greater Manchester</span>
-                </li>
-                <li>info@fortissecured.co.uk</li>
-                <li>077762 853255</li>
-                <li className="flex space-x-2 mt-4">
-                  <a href="#" className="bg-blue-800 p-1 rounded">
-                    <span className="sr-only">Facebook</span>
-                    <div className="h-4 w-4 bg-white"></div>
-                  </a>
-                  <a href="#" className="bg-blue-400 p-1 rounded">
-                    <span className="sr-only">Twitter</span>
-                    <div className="h-4 w-4 bg-white"></div>
-                  </a>
-                  <a href="#" className="bg-blue-600 p-1 rounded">
-                    <span className="sr-only">LinkedIn</span>
-                    <div className="h-4 w-4 bg-white"></div>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-            <p>© 2025 Fortis Security. All rights reserved.</p>
+        
+        {/* Image Gallery */}
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold mb-8 text-center text-fortis-dark-blue">Security in Action</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <img
+              src="/lovable-uploads/457f36e7-fea8-4df2-a62e-94d21299dea8.png"
+              alt="Door Supervisor"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+            <img
+              src="/lovable-uploads/8934e195-3312-49ed-9487-119bfc7dcbeb.png"
+              alt="Event Security"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+            <img
+              src="/lovable-uploads/d7b85158-9d60-42f3-a963-1d17bf3181a4.png"
+              alt="Security Guard"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+            <img
+              src="/lovable-uploads/0b42914c-24e4-41cd-92c2-a3d785dfcb78.png"
+              alt="Stadium Security"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+            <img
+              src="/lovable-uploads/1dc5798f-b3e5-425d-a6d0-3b9ac43c0e2a.png"
+              alt="Event Security Staff"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
+            <img
+              src="/lovable-uploads/7b1b9b72-4b5c-4a7f-881a-e5bf1bf0d970.png"
+              alt="Venue Security"
+              className="w-full h-64 object-cover rounded-lg shadow-md"
+            />
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 };

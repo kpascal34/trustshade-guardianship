@@ -11,9 +11,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Information */}
           <div>
-            <h3 className="text-xl font-bold mb-4 text-fortis-light-blue">
-              FORTIS SECURITY
-            </h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" 
+                alt="Fortis Security Logo" 
+                className="h-12 mr-2"
+              />
+            </div>
             <p className="mb-4 text-gray-300">
               Professional security services with a focus on trust and integrity.
             </p>
@@ -141,15 +145,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-fortis-light-blue flex-shrink-0" />
-                <span>123 Security Street, London, UK</span>
+                <span>Yorkshire & Greater Manchester</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-fortis-light-blue flex-shrink-0" />
-                <span>+44 123 456 7890</span>
+                <span>077762 853255</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-fortis-light-blue flex-shrink-0" />
-                <span>info@fortissecurity.com</span>
+                <span>info@fortissecured.co.uk</span>
               </li>
             </ul>
           </div>
