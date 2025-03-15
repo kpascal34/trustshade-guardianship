@@ -1,35 +1,26 @@
-
 import { Link } from "react-router-dom";
 import { Shield, Clock, UserCheck, FileSearch } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 import TestimonialCard from "../components/TestimonialCard";
-
-const testimonials = [
-  {
-    quote: "Michael is the best bouncer he really looked after me and my friends when we were drunk and made sure we didn't get any trouble.",
-    author: "Poppy",
-    imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
-  },
-  {
-    quote: "Love everything about the night, but mainly the staff, best staff I've ever had, big shout out to Kingsley for looking after me, most caring staff in Leeds!",
-    author: "Paul",
-    imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-  },
-  {
-    quote: "This company staff are always really great about handling things without being overly aggressive. They're really supportive when you need help.",
-    author: "Morgan",
-    imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-  },
-  {
-    quote: "Professional and reliable service. The team is always practical and handles situations with expertise. Creating a relaxing environment for our customers.",
-    author: "Ryan",
-    imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
-  }
-];
-
+const testimonials = [{
+  quote: "Michael is the best bouncer he really looked after me and my friends when we were drunk and made sure we didn't get any trouble.",
+  author: "Poppy",
+  imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
+}, {
+  quote: "Love everything about the night, but mainly the staff, best staff I've ever had, big shout out to Kingsley for looking after me, most caring staff in Leeds!",
+  author: "Paul",
+  imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+}, {
+  quote: "This company staff are always really great about handling things without being overly aggressive. They're really supportive when you need help.",
+  author: "Morgan",
+  imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+}, {
+  quote: "Professional and reliable service. The team is always practical and handles situations with expertise. Creating a relaxing environment for our customers.",
+  author: "Ryan",
+  imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+}];
 const Home = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
@@ -42,45 +33,23 @@ const Home = () => {
             Manchester, we ensure a safe environment for businesses and 
             events.
           </p>
-          <Link 
-            to="/contact" 
-            className="inline-block bg-black text-white py-3 px-8 rounded font-medium hover:bg-gray-800 transition-colors"
-          >
+          <Link to="/contact" className="inline-block bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors px-[37px] mx-0 my-0">
             FOLLOW US
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
-              alt="Modern surveillance monitoring center" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
-            <p className="text-sm text-center mt-2">Modern surveillance monitoring center</p>
+            <img alt="Modern surveillance monitoring center" src="/lovable-uploads/f222cbb3-778f-4228-933a-39a375dc54a4.jpg" className="w-full h-auto rounded-lg shadow-md object-contain" />
+            
+          </div>
+          
+          <div>
+            <img alt="Security patrol service in action" className="w-full h-auto rounded-lg shadow-md" src="/lovable-uploads/2bda169f-f79b-44a2-8a02-53f59cc5c041.jpg" />
+            
           </div>
           <div>
-            <img 
-              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
-              alt="Professional venue security team" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
-            <p className="text-sm text-center mt-2">Professional venue security team</p>
-          </div>
-          <div>
-            <img 
-              src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
-              alt="Security patrol service in action" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
-            <p className="text-sm text-center mt-2">Security patrol service in action</p>
-          </div>
-          <div>
-            <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
-              alt="Corporate security solutions" 
-              className="w-full h-auto rounded-lg shadow-md" 
-            />
-            <p className="text-sm text-center mt-2">Corporate security solutions</p>
+            <img alt="Corporate security solutions" className="w-full h-auto rounded-lg shadow-md" src="/lovable-uploads/424d6ba8-0d30-42b7-9eaf-b9ec431f7b55.jpg" />
+            
           </div>
         </div>
       </section>
@@ -89,11 +58,7 @@ const Home = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <img 
-              src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" 
-              alt="Fortis Security Logo" 
-              className="max-w-xs mx-auto md:mx-0" 
-            />
+            <img src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" alt="Fortis Security Logo" className="max-w-xs mx-auto md:mx-0" />
           </div>
           <div>
             <h2 className="text-3xl font-bold mb-6">About Us</h2>
@@ -118,19 +83,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard
-                key={index}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                imageSrc={testimonial.imageSrc}
-              />
-            ))}
+            {testimonials.map((testimonial, index) => <TestimonialCard key={index} quote={testimonial.quote} author={testimonial.author} imageSrc={testimonial.imageSrc} />)}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
