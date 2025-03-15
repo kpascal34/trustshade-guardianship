@@ -63,12 +63,7 @@ const Home = () => {
               distinguishes us in a competitive market and allows us to provide outstanding
               service.
             </p>
-            <p>
-              We aim to positively change the security sector by prioritizing fair
-              remuneration and better working conditions for our staff. Our investment in
-              training and ongoing support fosters a positive workplace culture, attracting
-              and retaining top talent to benefit our clients and communities.
-            </p>
+            <p>We aim to positively change the security sector by prioritising fair remuneration and better working conditions for our staff. Our investment in training and ongoing support fosters a positive workplace culture, attracting and retaining top talent to benefit our clients and communities.</p>
           </div>
         </div>
       </section>
