@@ -9,24 +9,28 @@ const Services = () => {
       title: "Manned Guarding",
       icon: <div className="bg-blue-600 w-full h-32 flex items-center justify-center rounded"><Shield className="h-6 w-6 text-white" /></div>,
       description: "Professional security personnel providing 24/7 protection for your premises.",
+      imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
     },
     {
       id: "door-supervision",
       title: "Door Supervision",
       icon: <div className="w-full flex items-center justify-center"><UserCheck className="h-6 w-6 text-blue-500" /></div>,
       description: "Licensed door supervisors for venues and events management.",
+      imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
     },
     {
       id: "event-security",
       title: "Event Security",
       icon: <div className="w-full flex items-center justify-center"><Clock className="h-6 w-6 text-blue-500" /></div>,
       description: "Comprehensive security solutions for events of all sizes.",
+      imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
     },
     {
       id: "risk-assessments",
       title: "Risk Assessment",
       icon: <div className="w-full flex items-center justify-center"><FileSearch className="h-6 w-6 text-blue-500" /></div>,
       description: "Expert security risk assessment and consultation services.",
+      imageSrc: "https://images.unsplash.com/photo-1518770660439-4636190af475"
     },
   ];
 
@@ -52,6 +56,7 @@ const Services = () => {
               title={service.title}
               description={service.description}
               icon={service.icon}
+              imageSrc={service.imageSrc}
             />
           ))}
         </div>

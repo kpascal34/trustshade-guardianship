@@ -8,18 +8,22 @@ const testimonials = [
   {
     quote: "Michael is the best bouncer he really looked after me and my friends when we were drunk and made sure we didn't get any trouble.",
     author: "Poppy",
+    imageSrc: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
   },
   {
     quote: "Love everything about the night, but mainly the staff, best staff I've ever had, big shout out to Kingsley for looking after me, most caring staff in Leeds!",
     author: "Paul",
+    imageSrc: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
   },
   {
     quote: "This company staff are always really great about handling things without being overly aggressive. They're really supportive when you need help.",
     author: "Morgan",
+    imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
     quote: "Professional and reliable service. The team is always practical and handles situations with expertise. Creating a relaxing environment for our customers.",
     author: "Ryan",
+    imageSrc: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
   }
 ];
 
@@ -48,7 +52,7 @@ const Home = () => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <img 
-              src="/lovable-uploads/358ef451-408f-420f-ab7a-d6c124a1d2ea.png" 
+              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
               alt="Modern surveillance monitoring center" 
               className="w-full h-auto rounded-lg shadow-md" 
             />
@@ -56,7 +60,7 @@ const Home = () => {
           </div>
           <div>
             <img 
-              src="/lovable-uploads/90d901a8-50b5-4b12-8b30-6df65c2e9195.png" 
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
               alt="Professional venue security team" 
               className="w-full h-auto rounded-lg shadow-md" 
             />
@@ -64,7 +68,7 @@ const Home = () => {
           </div>
           <div>
             <img 
-              src="/lovable-uploads/42a457dd-f80a-48ed-9113-048f186d77b1.png" 
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
               alt="Security patrol service in action" 
               className="w-full h-auto rounded-lg shadow-md" 
             />
@@ -72,7 +76,7 @@ const Home = () => {
           </div>
           <div>
             <img 
-              src="/lovable-uploads/ecd5bc12-c538-48d1-84dc-c781cb06e7c0.png" 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
               alt="Corporate security solutions" 
               className="w-full h-auto rounded-lg shadow-md" 
             />
@@ -119,6 +123,7 @@ const Home = () => {
                 key={index}
                 quote={testimonial.quote}
                 author={testimonial.author}
+                imageSrc={testimonial.imageSrc}
               />
             ))}
           </div>
