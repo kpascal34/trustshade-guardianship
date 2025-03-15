@@ -1,9 +1,6 @@
-
 import { Shield, Zap, Users } from "lucide-react";
-
 const About = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <section className="container mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold mb-8 text-center">About</h1>
         
@@ -36,11 +33,7 @@ const About = () => {
           </div>
           
           <div className="flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/90d901a8-50b5-4b12-8b30-6df65c2e9195.png"
-              alt="Fortis Security Team" 
-              className="rounded-lg shadow-lg max-w-full h-auto"
-            />
+            <img alt="Fortis Security Team" className="rounded-lg shadow-lg max-w-full h-auto" src="/lovable-uploads/00c9c2bd-d105-401d-b7a7-74e0d049c000.jpg" />
           </div>
         </div>
       </section>
@@ -69,8 +62,6 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
