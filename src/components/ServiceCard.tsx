@@ -1,7 +1,5 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface ServiceCardProps {
   id: string;
@@ -12,21 +10,18 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ id, title, description, icon }: ServiceCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full border border-gray-100">
-      <div className="bg-fortis-light-blue/10 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col h-full">
+      <div className="mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-3 text-fortis-dark-blue">{title}</h3>
-      <p className="text-gray-600 mb-4 flex-grow">{description}</p>
-      <Button 
-        asChild 
-        className="mt-auto group bg-fortis-dark-blue hover:bg-fortis-light-blue text-white"
+      <h3 className="text-xl font-bold mb-3">{title}</h3>
+      <p className="text-gray-600 mb-6 flex-grow">{description}</p>
+      <Link 
+        to={`/services/${id}`} 
+        className="mt-auto bg-slate-600 text-white py-2 px-4 rounded hover:bg-slate-700 text-center"
       >
-        <Link to={`/services/${id}`} className="flex items-center">
-          Learn More
-          <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </Button>
+        Learn More
+      </Link>
     </div>
   );
 };

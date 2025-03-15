@@ -1,6 +1,4 @@
 
-import { Quote } from "lucide-react";
-
 interface TestimonialCardProps {
   quote: string;
   author: string;
@@ -10,11 +8,10 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ quote, author, position, company }: TestimonialCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md h-full flex flex-col">
-      <Quote className="text-fortis-light-blue mb-4 h-8 w-8" />
-      <p className="text-gray-700 mb-6 flex-grow italic">{quote}</p>
+    <div className="bg-white p-6 rounded-lg shadow-md h-full flex flex-col border border-gray-200">
+      <p className="text-gray-700 mb-6 flex-grow italic text-sm">{quote}</p>
       <div>
-        <p className="font-semibold text-fortis-dark-blue">{author}</p>
+        <p className="font-semibold text-gray-800">- {author}</p>
         {(position || company) && (
           <p className="text-gray-600 text-sm">
             {position}{position && company && `, `}{company}

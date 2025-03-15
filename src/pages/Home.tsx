@@ -1,190 +1,127 @@
 
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { 
-  Shield, 
-  Users, 
-  CalendarClock, 
-  FileSearch,
-  ChevronRight,
-  CheckCircle
-} from "lucide-react";
-import HeroSection from "../components/HeroSection";
+import { Shield, Clock, UserCheck, FileSearch } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 import TestimonialCard from "../components/TestimonialCard";
 
-const services = [
-  {
-    id: "door-supervision",
-    title: "Door Supervision",
-    description: "Professional door supervisors for venues, clubs, and events. We ensure orderly entry and maintain a safe environment.",
-    icon: <Shield className="h-8 w-8 text-fortis-light-blue" />,
-  },
-  {
-    id: "manned-guarding",
-    title: "Manned Guarding",
-    description: "Reliable security personnel protecting your property, assets, and people around the clock with vigilance and professionalism.",
-    icon: <Users className="h-8 w-8 text-fortis-light-blue" />,
-  },
-  {
-    id: "event-security",
-    title: "Event Security",
-    description: "Comprehensive security solutions for events of all sizes, ensuring attendees enjoy a safe and secure experience.",
-    icon: <CalendarClock className="h-8 w-8 text-fortis-light-blue" />,
-  },
-  {
-    id: "risk-assessments",
-    title: "Risk Assessments",
-    description: "Detailed evaluation of potential security threats and vulnerabilities, with tailored recommendations to mitigate risks.",
-    icon: <FileSearch className="h-8 w-8 text-fortis-light-blue" />,
-  },
-];
-
 const testimonials = [
   {
-    quote: "Fortis Security provided exceptional service for our annual corporate event. Their team was professional, courteous, and highly attentive to our security needs.",
-    author: "Jane Smith",
-    position: "Event Manager",
-    company: "Global Enterprises",
+    quote: "Michael is the best bouncer he really looked after me and my friends when we were drunk and made sure we didn't get any trouble.",
+    author: "Poppy",
   },
   {
-    quote: "We've been using Fortis for our venue security for the past three years. Their door supervisors are always punctual, well-presented, and handle difficult situations with impressive professionalism.",
-    author: "Michael Johnson",
-    position: "Operations Director",
-    company: "Nightlife Venues Ltd",
+    quote: "Love everything about the night, but mainly the staff, best staff I've ever had, big shout out to Kingsley for looking after me, most caring staff in Leeds!",
+    author: "Paul",
   },
   {
-    quote: "The risk assessment conducted by Fortis Security was comprehensive and provided valuable insights. They identified security vulnerabilities we hadn't considered and implemented effective solutions.",
-    author: "Sarah Williams",
-    position: "Facilities Manager",
-    company: "Tech Innovations Inc",
+    quote: "This company staff are always really great about handling things without being overly aggressive. They're really supportive when you need help.",
+    author: "Morgan",
   },
+  {
+    quote: "Professional and reliable service. The team is always practical and handles situations with expertise. Creating a relaxing environment for our customers.",
+    author: "Ryan",
+  }
 ];
 
 const Home = () => {
   return (
     <div className="min-h-screen">
-      <HeroSection
-        title="Your Security is Our Priority"
-        subtitle="Professional security services delivered with trust and integrity"
-        ctaText="Get a Free Quote"
-      />
-
-      {/* Services Section */}
-      <section className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
-            Fortis Security offers comprehensive security solutions tailored to your specific needs.
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+            Your Trusted Partner in Security Solutions
+          </h1>
+          <p className="text-lg mb-8 text-gray-700">
+            At Fortis Security, we specialize in bespoke security services 
+            tailored to your needs. Operating across Yorkshire and 
+            Manchester, we ensure a safe environment for businesses and 
+            events.
           </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service) => (
-            <ServiceCard
-              key={service.id}
-              id={service.id}
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-            />
-          ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <Button 
-            asChild 
-            variant="outline" 
-            className="border-fortis-light-blue text-fortis-dark-blue hover:bg-fortis-light-blue hover:text-white group"
+          <Link 
+            to="/contact" 
+            className="inline-block bg-black text-white py-3 px-8 rounded font-medium hover:bg-gray-800 transition-colors"
           >
-            <Link to="/services" className="flex items-center">
-              View All Services
-              <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+            FOLLOW US
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div>
+            <img 
+              src="/lovable-uploads/358ef451-408f-420f-ab7a-d6c124a1d2ea.png" 
+              alt="Modern surveillance monitoring center" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Modern surveillance monitoring center</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/90d901a8-50b5-4b12-8b30-6df65c2e9195.png" 
+              alt="Professional venue security team" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Professional venue security team</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/42a457dd-f80a-48ed-9113-048f186d77b1.png" 
+              alt="Security patrol service in action" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Security patrol service in action</p>
+          </div>
+          <div>
+            <img 
+              src="/lovable-uploads/ecd5bc12-c538-48d1-84dc-c781cb06e7c0.png" 
+              alt="Corporate security solutions" 
+              className="w-full h-auto rounded-lg shadow-md" 
+            />
+            <p className="text-sm text-center mt-2">Corporate security solutions</p>
+          </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="bg-gray-50 py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="section-title">Why Choose Fortis Security</h2>
-            <p className="section-subtitle">
-              We are committed to providing superior security services with a foundation built on trust and integrity.
-            </p>
+      {/* About Us Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img 
+              src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" 
+              alt="Fortis Security Logo" 
+              className="max-w-xs mx-auto md:mx-0" 
+            />
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <CheckCircle className="h-6 w-6 text-fortis-light-blue mr-2" />
-                <h3 className="text-xl font-bold text-fortis-dark-blue">Highly Trained Staff</h3>
-              </div>
-              <p className="text-gray-600">
-                Our security professionals undergo extensive training and maintain all required certifications.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <CheckCircle className="h-6 w-6 text-fortis-light-blue mr-2" />
-                <h3 className="text-xl font-bold text-fortis-dark-blue">24/7 Availability</h3>
-              </div>
-              <p className="text-gray-600">
-                Round-the-clock service ensures your security needs are met at any time of day or night.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <CheckCircle className="h-6 w-6 text-fortis-light-blue mr-2" />
-                <h3 className="text-xl font-bold text-fortis-dark-blue">Customized Solutions</h3>
-              </div>
-              <p className="text-gray-600">
-                We develop tailored security strategies to address your specific requirements and challenges.
-              </p>
-            </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-6">About Us</h2>
+            <p className="mb-4">
+              At Fortis, we have extensive experience as a leading security company in
+              Yorkshire and Greater Manchester. Our commitment to excellence
+              distinguishes us in a competitive market and allows us to provide outstanding
+              service.
+            </p>
+            <p>
+              We aim to positively change the security sector by prioritizing fair
+              remuneration and better working conditions for our staff. Our investment in
+              training and ongoing support fosters a positive workplace culture, attracting
+              and retaining top talent to benefit our clients and communities.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="section-container">
-        <div className="text-center mb-12">
-          <h2 className="section-title">What Our Clients Say</h2>
-          <p className="section-subtitle">
-            Don't just take our word for it. Here's what our clients have to say about our services.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={index}
-              quote={testimonial.quote}
-              author={testimonial.author}
-              position={testimonial.position}
-              company={testimonial.company}
-            />
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="bg-fortis-dark-blue text-white py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to enhance your security?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Contact us today to discuss how Fortis Security can provide tailored security solutions for your needs.
-          </p>
-          <Button 
-            asChild 
-            size="lg" 
-            className="bg-fortis-light-blue hover:bg-white hover:text-fortis-dark-blue"
-          >
-            <Link to="/contact">Get a Free Quote</Link>
-          </Button>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Testimonials</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={index}
+                quote={testimonial.quote}
+                author={testimonial.author}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </div>
