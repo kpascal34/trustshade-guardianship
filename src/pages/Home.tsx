@@ -27,12 +27,7 @@ const Home = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Your Trusted Partner in Security Solutions
           </h1>
-          <p className="text-lg mb-8 text-gray-700">
-            At Fortis Security, we specialize in bespoke security services 
-            tailored to your needs. Operating across Yorkshire and 
-            Manchester, we ensure a safe environment for businesses and 
-            events.
-          </p>
+          <p className="text-lg mb-8 text-gray-700">At Fortis Security, we specialise in bespoke security services tailored to your needs. Operating across Yorkshire and Manchester, we ensure a safe environment for businesses and events.</p>
           <Link to="/contact" className="inline-block bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors px-[37px] mx-0 my-0">
             FOLLOW US
           </Link>
