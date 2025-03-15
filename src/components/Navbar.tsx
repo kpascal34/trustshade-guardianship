@@ -1,22 +1,16 @@
-
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
-  return (
-    <header className="w-full bg-black text-white">
-      <div className="container mx-auto px-4 flex justify-end items-center py-3">
+  return <header className="w-full bg-black text-white">
+      <div className="container mx-auto px-4 flex justify-end items-center py-3 bg-gray-900">
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-white hover:text-gray-300 transition-colors">
             Home
@@ -30,10 +24,7 @@ const Navbar = () => {
           <Link to="/contact" className="text-white hover:text-gray-300 transition-colors">
             Contact
           </Link>
-          <Link 
-            to="/login" 
-            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition-colors ml-4"
-          >
+          <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition-colors ml-4">
             Log in
           </Link>
         </nav>
@@ -45,8 +36,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black w-full py-4 shadow-md animate-fade-in">
+      {isMenuOpen && <div className="md:hidden bg-black w-full py-4 shadow-md animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <Link to="/" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
               Home
@@ -60,18 +50,11 @@ const Navbar = () => {
             <Link to="/contact" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
               Contact
             </Link>
-            <Link 
-              to="/login" 
-              className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors"
-              onClick={closeMenu}
-            >
+            <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors" onClick={closeMenu}>
               Log in
             </Link>
           </div>
-        </div>
-      )}
-    </header>
-  );
+        </div>}
+    </header>;
 };
-
 export default Navbar;

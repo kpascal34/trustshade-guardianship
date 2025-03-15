@@ -1,12 +1,8 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Linkedin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-black text-white py-10">
+  return <footer className="text-white py-10 bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company */}
@@ -98,8 +94,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
