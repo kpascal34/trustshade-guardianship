@@ -2,6 +2,7 @@
 import { Shield, UserCheck, Clock, FileSearch } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 import ContactForm from "../components/ContactForm";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Services = () => {
   const services = [

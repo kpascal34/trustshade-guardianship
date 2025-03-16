@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ServiceCardProps {
   id: string;
@@ -15,12 +16,17 @@ const ServiceCard = ({ id, title, description, icon, imageSrc, imagePosition }: 
     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col h-full">
       <div className="mb-4">
         {imageSrc ? (
-          <div className="w-full h-48 overflow-hidden rounded mb-4">
-            <img 
-              src={imageSrc} 
-              alt={title} 
-              className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imagePosition || 'object-center'}`}
-            />
+          <div className="w-full overflow-hidden rounded mb-4">
+            <AspectRatio ratio={4/3} className="h-48">
+              <img 
+                src={imageSrc} 
+                alt={title} 
+                className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imagePosition || 'object-center'}`}
+                width="300"
+                height="225"
+                loading="lazy"
+              />
+            </AspectRatio>
           </div>
         ) : (
           icon
