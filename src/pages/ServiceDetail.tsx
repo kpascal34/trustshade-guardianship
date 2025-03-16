@@ -1,3 +1,4 @@
+
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Shield, Users, CalendarClock, FileSearch, CheckCircle } from "lucide-react";
 import HeroSection from "../components/HeroSection";
@@ -62,24 +63,25 @@ const serviceData: Record<string, ServiceInfo> = {
   },
   "event-security": {
     id: "event-security",
-    title: "Event Security",
+    title: "Event Security Services",
     subtitle: "Comprehensive security solutions for events of all sizes",
     description: [
-      "From corporate functions to large festivals, our event security team ensures the safety and security of attendees, staff, and performers. We provide comprehensive security planning and implementation for events of all sizes.",
-      "Our event security services include crowd management, access control, bag searches, emergency response planning, and VIP protection. We work closely with event organizers to develop a tailored security plan that meets the specific requirements of each event.",
-      "All our event security staff are SIA licensed and experienced in handling large crowds, managing queues, and responding to incidents quickly and effectively while maintaining a friendly and professional approach."
+      "At Fortis Security, we prioritise the safety and well-being of attendees, staff, and assets at events. Our tailored event security services ensure smooth operations and peace of mind, positioning us as industry leaders.",
+      "Event Planning and Risk Assessment: We begin security planning early by conducting venue assessments and creating tailored strategies that comply with regulations. Our planning includes coordinating with local authorities, assessing risks, and implementing preventive measures for potential security challenges.",
+      "Expert Crowd Control: We specialise in managing crowd flow and density at events. Using advanced monitoring techniques and strategic control measures, we prevent overcrowding, ensure optimal attendee distribution, and enhance safety throughout the event.",
+      "VIP Protection Services: Our specialised VIP security teams offer discreet yet effective protection for high-profile guests. We provide close protection officers, secure transportation arrangements, and dedicated security protocols tailored to each VIP's needs. We prioritise ensuring your VIP guests receive professional protection while maintaining their privacy and comfort.",
+      "Emergency Management and Response: We have established emergency response protocols with local authorities. Our trained teams handle evacuation, medical emergencies, and crisis communication, enabling us to respond quickly and ensure the safety of all attendees."
     ],
     benefits: [
-      "Comprehensive event risk assessment",
-      "Crowd management and crowd control",
-      "Controlled entry and exit points",
-      "Emergency response coordination",
-      "VIP and asset protection",
-      "Reduction in theft and property damage",
-      "Enhanced attendee experience and safety"
+      "Seamless Event Operations",
+      "Enhanced Attendee Experience",
+      "Comprehensive Risk Management",
+      "Professional Incident Response",
+      "Cost-Effective Security Solutions",
+      "Future Event Optimisation"
     ],
     icon: <CalendarClock className="h-12 w-12 text-fortis-light-blue" />,
-    heroImage: "/event-security.jpg"
+    heroImage: "/lovable-uploads/0e4c5c11-900c-415f-8342-77dc862a8dec.png"
   },
   "risk-assessments": {
     id: "risk-assessments",
