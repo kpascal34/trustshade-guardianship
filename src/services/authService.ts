@@ -60,6 +60,9 @@ export const signUpUser = async (email: string, password: string) => {
 };
 
 // Function to sign out a user
-export const signOutUser = async () => {
-  return supabase.auth.signOut();
+export const signOutUser = async (): Promise<void> => {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.error('Error signing out:', error);
+  }
 };
