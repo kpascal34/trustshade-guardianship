@@ -97,7 +97,8 @@ const ContactForm = () => {
         });
         // Reset reCAPTCHA
         setRecaptchaValue(null);
-        if (window.grecaptcha) {
+        // Safely reset reCAPTCHA if it exists
+        if (typeof window !== 'undefined' && window.grecaptcha) {
           window.grecaptcha.reset();
         }
       })
