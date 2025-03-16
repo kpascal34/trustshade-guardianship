@@ -6,9 +6,12 @@ import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, User } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Register = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -84,6 +87,22 @@ const Register = () => {
         throw error;
       }
       
+      // Update profile with first and last name if provided
+      if (data?.user && (firstName || lastName)) {
+        const { error: profileError } = await supabase
+          .from('profiles')
+          .update({
+            first_name: firstName,
+            last_name: lastName
+          })
+          .eq('id', data.user.id);
+          
+        if (profileError) {
+          console.error("Error updating profile:", profileError);
+          // We still proceed with successful registration
+        }
+      }
+      
       toast({
         title: "Success",
         description: "Account created successfully. Please check your email for verification.",
@@ -116,6 +135,44 @@ const Register = () => {
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="firstName">First Name</Label>
+                <div className="mt-1 relative">
+                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                    <User className="h-5 w-5 text-gray-400" />
+                  </span>
+                  <Input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="pl-10"
+                    placeholder="John"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <Label htmlFor="lastName">Last Name</Label>
+                <div className="mt-1 relative">
+                  <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                    <User className="h-5 w-5 text-gray-400" />
+                  </span>
+                  <Input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="pl-10"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+            </div>
+            
             <div>
               <Label htmlFor="email">Email Address</Label>
               <div className="mt-1 relative">

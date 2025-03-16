@@ -1,10 +1,11 @@
-
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { supabase } from "@/integrations/supabase/client";
+import { useAuth } from "@/contexts/AuthContext";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import {
@@ -17,6 +18,7 @@ import {
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const [formData, setFormData] = useState({
@@ -49,7 +51,7 @@ const ContactForm = () => {
     setRecaptchaValue(value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!recaptchaValue) {
@@ -63,56 +65,73 @@ const ContactForm = () => {
     
     setIsSubmitting(true);
 
-    // Prepare template params for EmailJS
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      from_phone: formData.phone,
-      service_interest: formData.service,
-      subject: formData.subject,
-      message: formData.message,
-      'g-recaptcha-response': recaptchaValue,
-    };
+    try {
+      // Store submission in Supabase
+      const { error: supabaseError } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          service: formData.service,
+          user_id: user?.id || null, // Associate with user if logged in
+        });
 
-    // Send email using EmailJS
-    emailjs
-      .send(
+      if (supabaseError) {
+        throw new Error(supabaseError.message);
+      }
+
+      // Prepare template params for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        service_interest: formData.service,
+        subject: formData.subject,
+        message: formData.message,
+        'g-recaptcha-response': recaptchaValue,
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
         "service_s40muhp", // Service ID
         "template_pyx1via", // Template ID
         templateParams
-      )
-      .then(() => {
-        toast({
-          title: "Message Sent!",
-          description: "We'll get back to you as soon as possible.",
-        });
-        // Reset form after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          service: "",
-          message: "",
-        });
-        // Reset reCAPTCHA
-        setRecaptchaValue(null);
-        // Safely reset reCAPTCHA if it exists
-        if (typeof window !== 'undefined' && window.grecaptcha) {
-          window.grecaptcha.reset();
-        }
-      })
-      .catch((error) => {
-        console.error("EmailJS error:", error);
-        toast({
-          title: "Error",
-          description: "There was a problem sending your message. Please try again.",
-          variant: "destructive",
-        });
-      })
-      .finally(() => {
-        setIsSubmitting(false);
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you as soon as possible.",
       });
+      
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        service: "",
+        message: "",
+      });
+      
+      // Reset reCAPTCHA
+      setRecaptchaValue(null);
+      // Safely reset reCAPTCHA if it exists
+      if (typeof window !== 'undefined' && window.grecaptcha) {
+        window.grecaptcha.reset();
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
