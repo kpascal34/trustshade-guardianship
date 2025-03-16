@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/components/ui/use-toast";
@@ -7,20 +7,44 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Lock } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const { signUp } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
-  const handleRecaptchaChange = (value: string | null) => {
-    setRecaptchaValue(value);
+  useEffect(() => {
+    // Load reCAPTCHA Enterprise script
+    const script = document.createElement('script');
+    script.src = "https://www.google.com/recaptcha/enterprise.js?render=6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Clean up script when component unmounts
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  const executeRecaptcha = async () => {
+    if (window.grecaptchaEnterprise) {
+      return new Promise<string>((resolve) => {
+        window.grecaptchaEnterprise.enterprise.ready(async () => {
+          const token = await window.grecaptchaEnterprise.enterprise.execute(
+            '6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo', 
+            { action: 'REGISTER' }
+          );
+          resolve(token);
+        });
+      });
+    } else {
+      throw new Error("reCAPTCHA Enterprise not loaded");
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -44,18 +68,16 @@ const Register = () => {
       return;
     }
     
-    if (!recaptchaValue) {
-      toast({
-        title: "reCAPTCHA Required",
-        description: "Please complete the reCAPTCHA verification.",
-        variant: "destructive",
-      });
-      return;
-    }
-    
     setIsLoading(true);
     
     try {
+      // Execute reCAPTCHA Enterprise and get token
+      const token = await executeRecaptcha();
+      setRecaptchaToken(token);
+      
+      console.log("reCAPTCHA Enterprise token:", token);
+      
+      // Proceed with signup
       const { error, data } = await signUp(email, password);
       
       if (error) {
@@ -155,17 +177,16 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="flex justify-center my-4">
-            <ReCAPTCHA
-              sitekey="6Ld-hukqAAAAAHoT0TKKe8OclWgdnhcOTlh8QZiB"
-              onChange={handleRecaptchaChange}
-            />
+          <div className="mt-4 text-sm text-gray-500">
+            <p>This site is protected by reCAPTCHA Enterprise and the Google 
+            <a href="https://policies.google.com/privacy" className="text-primary hover:underline"> Privacy Policy</a> and 
+            <a href="https://policies.google.com/terms" className="text-primary hover:underline"> Terms of Service</a> apply.</p>
           </div>
 
           <Button
             type="submit"
             className="w-full"
-            disabled={isLoading || !recaptchaValue}
+            disabled={isLoading}
           >
             {isLoading ? "Creating account..." : "Create account"}
           </Button>
