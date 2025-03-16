@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 import {
   Select,
   SelectContent,
@@ -16,6 +18,7 @@ import {
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -42,8 +45,22 @@ const ContactForm = () => {
     }));
   };
 
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!recaptchaValue) {
+      toast({
+        title: "reCAPTCHA Required",
+        description: "Please complete the reCAPTCHA verification.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     setIsSubmitting(true);
 
     // Prepare template params for EmailJS
@@ -54,6 +71,7 @@ const ContactForm = () => {
       service_interest: formData.service,
       subject: formData.subject,
       message: formData.message,
+      'g-recaptcha-response': recaptchaValue,
     };
 
     // Send email using EmailJS
@@ -77,6 +95,11 @@ const ContactForm = () => {
           service: "",
           message: "",
         });
+        // Reset reCAPTCHA
+        setRecaptchaValue(null);
+        if (window.grecaptcha) {
+          window.grecaptcha.reset();
+        }
       })
       .catch((error) => {
         console.error("EmailJS error:", error);
@@ -171,11 +194,18 @@ const ContactForm = () => {
           required
         />
       </div>
+      
+      <div className="flex justify-center my-4">
+        <ReCAPTCHA
+          sitekey="6Ld-hukqAAAAAHoT0TKKe8OclWgdnhcOTlh8QZiB"
+          onChange={handleRecaptchaChange}
+        />
+      </div>
 
       <Button
         type="submit"
         className="w-full bg-fortis-light-blue hover:bg-fortis-dark-blue"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !recaptchaValue}
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>

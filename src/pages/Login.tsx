@@ -7,14 +7,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Lock } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
+
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +29,15 @@ const Login = () => {
       toast({
         title: "Error",
         description: "Please enter both email and password",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    if (!recaptchaValue) {
+      toast({
+        title: "reCAPTCHA Required",
+        description: "Please complete the reCAPTCHA verification.",
         variant: "destructive",
       });
       return;
@@ -112,10 +127,17 @@ const Login = () => {
             </div>
           </div>
 
+          <div className="flex justify-center my-4">
+            <ReCAPTCHA
+              sitekey="6Ld-hukqAAAAAHoT0TKKe8OclWgdnhcOTlh8QZiB"
+              onChange={handleRecaptchaChange}
+            />
+          </div>
+
           <Button
             type="submit"
             className="w-full"
-            disabled={isLoading}
+            disabled={isLoading || !recaptchaValue}
           >
             {isLoading ? "Logging in..." : "Log in"}
           </Button>
