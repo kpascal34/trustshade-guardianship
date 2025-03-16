@@ -136,12 +136,6 @@ const RegisterForm = ({
         </div>
       </div>
 
-      <div className="mt-4 text-sm text-gray-500">
-        <p>This site is protected by reCAPTCHA Enterprise and the Google 
-        <a href="https://policies.google.com/privacy" className="text-primary hover:underline"> Privacy Policy</a> and 
-        <a href="https://policies.google.com/terms" className="text-primary hover:underline"> Terms of Service</a> apply.</p>
-      </div>
-
       <Button
         type="submit"
         className="w-full"

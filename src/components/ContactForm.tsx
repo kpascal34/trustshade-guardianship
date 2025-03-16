@@ -1,11 +1,10 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import ContactFormFields from "./contact/ContactFormFields";
 import { submitContactForm } from "@/services/contactSubmissionService";
-import { executeRecaptchaEnterprise } from "@/utils/recaptchaUtils";
 import type { FormData } from "./contact/ContactFormFields";
 
 const ContactForm = () => {
@@ -20,16 +19,6 @@ const ContactForm = () => {
     service: "",
     message: "",
   });
-
-  useEffect(() => {
-    // Load reCAPTCHA Enterprise script if not already loaded
-    if (!document.querySelector('script[src*="recaptcha/enterprise.js"]')) {
-      const script = document.createElement('script');
-      script.src = "https://www.google.com/recaptcha/enterprise.js?render=6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo";
-      script.async = true;
-      document.head.appendChild(script);
-    }
-  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -64,12 +53,8 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Execute reCAPTCHA Enterprise and get token
-      const recaptchaToken = await executeRecaptchaEnterprise();
-      console.log("reCAPTCHA Enterprise token:", recaptchaToken);
-      
-      // Submit form with reCAPTCHA token
-      await submitContactForm(formData, recaptchaToken, user?.id);
+      // Submit form without reCAPTCHA token
+      await submitContactForm(formData, user?.id);
       
       toast({
         title: "Message Sent!",
@@ -98,12 +83,6 @@ const ContactForm = () => {
         handleChange={handleChange}
         handleServiceChange={handleServiceChange}
       />
-
-      <div className="mt-4 text-sm text-gray-500">
-        <p>This site is protected by reCAPTCHA Enterprise and the Google 
-        <a href="https://policies.google.com/privacy" className="text-primary hover:underline"> Privacy Policy</a> and 
-        <a href="https://policies.google.com/terms" className="text-primary hover:underline"> Terms of Service</a> apply.</p>
-      </div>
 
       <Button
         type="submit"

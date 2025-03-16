@@ -13,7 +13,6 @@ export interface ContactFormData {
 
 export const submitContactForm = async (
   formData: ContactFormData,
-  recaptchaToken: string,
   userId?: string | null
 ) => {
   // Store submission in Supabase
@@ -27,7 +26,6 @@ export const submitContactForm = async (
       message: formData.message,
       service: formData.service,
       user_id: userId || null, // Associate with user if logged in
-      recaptcha_token: recaptchaToken, // Store the token for verification
     });
 
   if (supabaseError) {
@@ -42,7 +40,6 @@ export const submitContactForm = async (
     service_interest: formData.service,
     subject: formData.subject,
     message: formData.message,
-    'g-recaptcha-response': recaptchaToken,
   };
 
   // Send email using EmailJS

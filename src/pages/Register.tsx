@@ -1,10 +1,9 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useToast } from "@/components/ui/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { executeRecaptchaEnterprise } from "@/utils/recaptchaUtils";
 import RegisterForm from "@/components/auth/RegisterForm";
 
 const Register = () => {
@@ -14,23 +13,9 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const { signUp } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Load reCAPTCHA Enterprise script
-    const script = document.createElement('script');
-    script.src = "https://www.google.com/recaptcha/enterprise.js?render=6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Clean up script when component unmounts
-      document.head.removeChild(script);
-    };
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,13 +41,7 @@ const Register = () => {
     setIsLoading(true);
     
     try {
-      // Execute reCAPTCHA Enterprise and get token
-      const token = await executeRecaptchaEnterprise();
-      setRecaptchaToken(token);
-      
-      console.log("reCAPTCHA Enterprise token:", token);
-      
-      // Proceed with signup
+      // Proceed with signup without reCAPTCHA
       const { error, data } = await signUp(email, password);
       
       if (error) {

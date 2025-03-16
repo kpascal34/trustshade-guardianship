@@ -1,10 +1,9 @@
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/components/ui/use-toast";
 import LoginForm from "@/components/auth/LoginForm";
-import { executeRecaptchaEnterprise } from "@/utils/recaptchaUtils";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,19 +12,6 @@ const Login = () => {
   const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    // Load reCAPTCHA Enterprise script
-    const script = document.createElement('script');
-    script.src = "https://www.google.com/recaptcha/enterprise.js?render=6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Clean up script when component unmounts
-      document.head.removeChild(script);
-    };
-  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,11 +28,7 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      // Execute reCAPTCHA Enterprise and get token
-      const token = await executeRecaptchaEnterprise();
-      console.log("reCAPTCHA Enterprise token:", token);
-      
-      // Proceed with login
+      // Proceed with login without reCAPTCHA
       const { error } = await signIn(email, password);
       
       if (error) {
