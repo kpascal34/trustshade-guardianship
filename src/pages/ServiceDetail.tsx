@@ -12,6 +12,7 @@ interface ServiceInfo {
   benefits: string[];
   icon: JSX.Element;
   heroImage: string;
+  process?: string[];
 }
 
 const serviceData: Record<string, ServiceInfo> = {
@@ -85,24 +86,35 @@ const serviceData: Record<string, ServiceInfo> = {
   },
   "risk-assessments": {
     id: "risk-assessments",
-    title: "Risk Assessments",
+    title: "Risk Assessment",
     subtitle: "Detailed evaluation of security threats and vulnerabilities",
     description: [
-      "Our security consultants conduct thorough risk assessments to identify potential vulnerabilities in your premises, operations, and existing security measures. This proactive approach helps prevent security breaches before they occur.",
-      "Following the assessment, we provide detailed recommendations to enhance your security infrastructure and protocols. These might include improvements to physical security, procedural changes, or staff training requirements.",
-      "Our risk assessment reports are comprehensive yet practical, prioritizing recommendations based on risk level and implementation cost. We can also assist with implementing the recommended security enhancements."
+      "At Fortis Security, our Risk Assessment service offers comprehensive evaluations to identify vulnerabilities and develop strong protection strategies. We analyse your security needs from all angles to create practical solutions safeguarding your assets, personnel, and operations.",
+      "Advanced Threat Analysis: Our security professionals conduct in-depth assessments of potential threats and vulnerabilities to your business or property. We consider physical and operational security, provide a comprehensive view of your situation, and use advanced methodologies to identify key security challenges.",
+      "Comprehensive Security Audit: We thoroughly review your security measures, assessing physical security, technology, procedures, and personnel practices. This assessment identifies areas for improvement and opportunities to enhance security.",
+      "Customised Security Solutions: We create customised security strategies based on our assessment findings, tailored to your specific needs, operational requirements, budget, and risk tolerance. Each solution ensures maximum security effectiveness while maintaining operational efficiency.",
+      "Strategic Implementation Planning: We provide step-by-step guidance for implementing security improvements, including timelines, resource needs, and milestones. This structured approach ensures smooth integration with minimal disruption to your operations."
     ],
     benefits: [
-      "Identification of security vulnerabilities",
-      "Prioritized security recommendations",
-      "Cost-effective security planning",
-      "Compliance with insurance requirements",
-      "Reduced likelihood of security incidents",
-      "Enhanced protection of assets and people",
-      "Expert security advice from industry professionals"
+      "Proactive Risk Management",
+      "Cost-Effective Security Investment",
+      "Enhanced Protection Framework",
+      "Regulatory Compliance Assurance",
+      "Stakeholder Confidence",
+      "Expert Security Consultation"
     ],
     icon: <FileSearch className="h-12 w-12 text-fortis-light-blue" />,
-    heroImage: "/risk-assessment.jpg"
+    heroImage: "/lovable-uploads/767234e9-6d8c-4d52-8d7a-f128af3e8eee.png",
+    process: [
+      "Initial Consultation and Scope Definition",
+      "Comprehensive Site Analysis and Documentation",
+      "Threat and Vulnerability Assessment",
+      "Security Control Evaluation",
+      "Risk Analysis and Prioritisation",
+      "Solution Development and Recommendations",
+      "Implementation Planning and Support",
+      "Follow-up Review and Adjustments"
+    ]
   }
 };
 
@@ -159,6 +171,18 @@ const ServiceDetail = () => {
                 <p key={index} className="text-gray-600">{paragraph}</p>
               ))}
             </div>
+
+            {service.process && (
+              <div className="mt-8">
+                <h3 className="text-2xl font-bold text-fortis-dark-blue mb-4">Our Assessment Process</h3>
+                <p className="text-gray-600 mb-4">Our structured approach to risk assessment ensures thorough coverage and practical outcomes:</p>
+                <ol className="list-decimal list-inside space-y-2 text-gray-600 ml-4">
+                  {service.process.map((step, index) => (
+                    <li key={index} className="pl-2">{step}</li>
+                  ))}
+                </ol>
+              </div>
+            )}
           </div>
 
           <div>
