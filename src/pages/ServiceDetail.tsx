@@ -39,24 +39,26 @@ const serviceData: Record<string, ServiceInfo> = {
   },
   "manned-guarding": {
     id: "manned-guarding",
-    title: "Manned Guarding",
+    title: "Manned and Static Guarding Services",
     subtitle: "Reliable security personnel protecting your property and assets",
     description: [
-      "Our manned guarding services provide a visible security presence that deters criminal activity and protects your premises around the clock. All of our security officers are SIA licensed and professionally trained.",
-      "We offer static guarding, mobile patrols, and reception security services tailored to your specific needs. Our guards can monitor access, conduct regular patrols, respond to alarms, and maintain detailed logs of all activities and incidents.",
-      "Our security officers are trained to handle various situations, from minor incidents to serious emergencies, while always maintaining a professional demeanor and appearance."
+      "At Fortis Security, we set a high standard for manned and static guarding services. We focus on professionalism, training, and reliability to provide excellent security solutions.",
+      "Comprehensive Coverage: Our static guards stay alert by working from strategically positioned posts and performing regular patrols. We use advanced monitoring systems and keep detailed logs of all activities and incidents to ensure no security breach goes unnoticed.",
+      "Professional Personnel: All security officers go through thorough vetting and receive extensive training that exceeds industry standards. Our guards wear professional uniforms and maintain high presentation standards, reflecting the quality of our service.",
+      "Flexible Deployment: We provide security solutions that can adjust to your needs, whether you need 24/7 coverage or security for specific hours. Our team can work with your existing security setup or create new protocols.",
+      "Advanced Communication Systems: Our guards use modern communication devices to respond quickly to any security situation. Regular check-ins and real-time reports keep everyone informed about the security status and any incidents.",
+      "Custom Security Protocols: After careful site assessments, we create security procedures that fit your specific needs. These include managing access control, screening visitors, responding to emergencies, and conducting regular security audits."
     ],
     benefits: [
-      "Visible deterrent to potential intruders",
-      "Immediate response to security incidents",
-      "Regular patrols of premises",
-      "Access control management",
-      "Detailed incident reporting",
-      "Reduced insurance premiums",
-      "Peace of mind for business owners and staff"
+      "Enhanced Security Presence",
+      "Risk Mitigation",
+      "Operational Support",
+      "Cost Effectiveness",
+      "Customised Reporting",
+      "Peace of Mind"
     ],
     icon: <Users className="h-12 w-12 text-fortis-light-blue" />,
-    heroImage: "/manned-guarding.jpg"
+    heroImage: "/lovable-uploads/fcbc0118-0f7d-4509-a838-02840cbcd291.png"
   },
   "event-security": {
     id: "event-security",
