@@ -4,16 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Mail, Lock } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha";
 
 interface LoginFormProps {
   email: string;
   password: string;
   isLoading: boolean;
-  recaptchaValue: string | null;
   onEmailChange: (value: string) => void;
   onPasswordChange: (value: string) => void;
-  onRecaptchaChange: (value: string | null) => void;
   onSubmit: (e: React.FormEvent) => void;
 }
 
@@ -21,10 +18,8 @@ const LoginForm = ({
   email,
   password,
   isLoading,
-  recaptchaValue,
   onEmailChange,
   onPasswordChange,
-  onRecaptchaChange,
   onSubmit,
 }: LoginFormProps) => {
   return (
@@ -72,18 +67,17 @@ const LoginForm = ({
           </div>
         </div>
       </div>
-
-      <div className="flex justify-center my-4">
-        <ReCAPTCHA
-          sitekey="6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo"
-          onChange={onRecaptchaChange}
-        />
+      
+      <div className="mt-4 text-sm text-gray-500">
+        <p>This site is protected by reCAPTCHA Enterprise and the Google 
+        <a href="https://policies.google.com/privacy" className="text-primary hover:underline"> Privacy Policy</a> and 
+        <a href="https://policies.google.com/terms" className="text-primary hover:underline"> Terms of Service</a> apply.</p>
       </div>
 
       <Button
         type="submit"
         className="w-full"
-        disabled={isLoading || !recaptchaValue}
+        disabled={isLoading}
       >
         {isLoading ? "Logging in..." : "Log in"}
       </Button>

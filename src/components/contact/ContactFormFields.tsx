@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -10,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import ReCAPTCHA from "react-google-recaptcha";
 
 export interface FormData {
   name: string;
@@ -25,16 +23,12 @@ interface ContactFormFieldsProps {
   formData: FormData;
   handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   handleServiceChange: (value: string) => void;
-  recaptchaValue: string | null;
-  handleRecaptchaChange: (value: string | null) => void;
 }
 
 const ContactFormFields = ({
   formData,
   handleChange,
   handleServiceChange,
-  recaptchaValue,
-  handleRecaptchaChange,
 }: ContactFormFieldsProps) => {
   return (
     <>
@@ -114,13 +108,6 @@ const ContactFormFields = ({
           placeholder="Please provide details about your inquiry..."
           rows={5}
           required
-        />
-      </div>
-      
-      <div className="flex justify-center my-4">
-        <ReCAPTCHA
-          sitekey="6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo"
-          onChange={handleRecaptchaChange}
         />
       </div>
     </>

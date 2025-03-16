@@ -1,22 +1,31 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/components/ui/use-toast";
 import LoginForm from "@/components/auth/LoginForm";
+import { executeRecaptchaEnterprise } from "@/utils/recaptchaUtils";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
   const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
 
-  const handleRecaptchaChange = (value: string | null) => {
-    setRecaptchaValue(value);
-  };
+  useEffect(() => {
+    // Load reCAPTCHA Enterprise script
+    const script = document.createElement('script');
+    script.src = "https://www.google.com/recaptcha/enterprise.js?render=6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Clean up script when component unmounts
+      document.head.removeChild(script);
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,18 +39,14 @@ const Login = () => {
       return;
     }
     
-    if (!recaptchaValue) {
-      toast({
-        title: "reCAPTCHA Required",
-        description: "Please complete the reCAPTCHA verification.",
-        variant: "destructive",
-      });
-      return;
-    }
-    
     setIsLoading(true);
     
     try {
+      // Execute reCAPTCHA Enterprise and get token
+      const token = await executeRecaptchaEnterprise();
+      console.log("reCAPTCHA Enterprise token:", token);
+      
+      // Proceed with login
       const { error } = await signIn(email, password);
       
       if (error) {
@@ -82,10 +87,8 @@ const Login = () => {
           email={email}
           password={password}
           isLoading={isLoading}
-          recaptchaValue={recaptchaValue}
           onEmailChange={setEmail}
           onPasswordChange={setPassword}
-          onRecaptchaChange={handleRecaptchaChange}
           onSubmit={handleSubmit}
         />
       </div>
