@@ -19,24 +19,26 @@ const Navbar = () => {
             <img src="/lovable-uploads/9ae772d2-cd83-4490-95d9-a8814b3a930f.png" alt="Fortis Security Logo" className="h-10 mr-2" />
           </Link>
 
-          {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-sm hover:text-gray-500">Home</Link>
-            <Link to="/about" className="text-sm hover:text-gray-500">About</Link>
-            <Link to="/services" className="text-sm hover:text-gray-500">Services</Link>
-            <Link to="/contact" className="text-sm hover:text-gray-500">Contact</Link>
-          </div>
+          <div className="flex items-center space-x-4">
+            {/* Navigation Links - Desktop */}
+            <div className="hidden md:flex space-x-6 justify-end">
+              <Link to="/" className="text-sm hover:text-gray-500">Home</Link>
+              <Link to="/about" className="text-sm hover:text-gray-500">About</Link>
+              <Link to="/services" className="text-sm hover:text-gray-500">Services</Link>
+              <Link to="/contact" className="text-sm hover:text-gray-500">Contact</Link>
+            </div>
 
-          {/* Auth Navigation Items */}
-          <div className="hidden md:block">
-            <AuthNavItems />
-          </div>
+            {/* Auth Navigation Items */}
+            <div className="hidden md:block">
+              <AuthNavItems />
+            </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Open menu">
-              <Menu className="h-5 w-5" />
-            </button>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Open menu">
+                <Menu className="h-5 w-5" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
