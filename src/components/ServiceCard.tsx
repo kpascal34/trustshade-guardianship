@@ -14,7 +14,7 @@ const ServiceCard = ({ id, title, description, icon, imageSrc }: ServiceCardProp
     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col h-full">
       <div className="mb-4">
         {imageSrc ? (
-          <div className="w-full h-40 overflow-hidden rounded mb-4">
+          <div className="w-full h-48 overflow-hidden rounded mb-4">
             <img 
               src={imageSrc} 
               alt={title} 
