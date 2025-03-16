@@ -1,9 +1,10 @@
 
-import { Shield, UserCheck, Clock, FileSearch } from "lucide-react";
+import { Shield, UserCheck, Clock, FileSearch, MapPin } from "lucide-react";
 import ServiceCard from "../components/ServiceCard";
 import ContactForm from "../components/ContactForm";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { 
   Breadcrumb,
   BreadcrumbList,
@@ -48,6 +49,13 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Professional Security Services in Yorkshire & Manchester | Fortis Security</title>
+        <meta name="description" content="Professional security services across Yorkshire and Greater Manchester. Offering door supervision, manned guarding, event security, and risk assessments." />
+        <meta name="keywords" content="security services Yorkshire, security services Manchester, door supervision, manned guarding, event security, risk assessment" />
+        <link rel="canonical" href="https://www.fortissecured.co.uk/services" />
+      </Helmet>
+      
       <div className="container mx-auto px-4 py-8">
         <Breadcrumb>
           <BreadcrumbList>
@@ -64,7 +72,7 @@ const Services = () => {
       
       {/* Services Hero Section */}
       <section className="py-12 container mx-auto px-4 text-center">
-        <h1 className="text-5xl font-bold mb-6 text-gray-900">Security Services in Yorkshire</h1>
+        <h1 className="text-5xl font-bold mb-6 text-gray-900">Security Services in Yorkshire & Manchester</h1>
         <p className="max-w-3xl mx-auto text-lg text-gray-700">
           At Fortis Security, we provide tailored security services to meet your needs across Yorkshire and Greater Manchester. 
           Our experienced team ensures that each solution offers the best security and 
@@ -98,12 +106,22 @@ const Services = () => {
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Yorkshire</h3>
               <p className="mb-4">We provide comprehensive security services throughout Yorkshire, including Leeds, Sheffield, York, Bradford, and Huddersfield.</p>
-              <p>From door supervision to manned guarding, our professional security personnel ensure safety and peace of mind for businesses and venues across the region.</p>
+              <p className="mb-4">From door supervision to manned guarding, our professional security personnel ensure safety and peace of mind for businesses and venues across the region.</p>
+              <div className="text-center mt-4">
+                <Link to="/locations/yorkshire" className="inline-block bg-slate-600 text-white py-2 px-4 rounded hover:bg-slate-700 transition-colors">
+                  Yorkshire Security Services
+                </Link>
+              </div>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md">
               <h3 className="text-xl font-bold mb-3">Greater Manchester</h3>
-              <p className="mb-4">Our security services extend to Greater Manchester, covering Manchester, Bolton, Rochdale, Oldham, and surrounding areas.</p>
-              <p>We offer tailored security solutions for events, venues, and businesses throughout the Greater Manchester region.</p>
+              <p className="mb-4">Our security services extend to Greater Manchester, covering Manchester city centre, Salford, Bolton, Rochdale, Oldham, and surrounding areas.</p>
+              <p className="mb-4">We offer tailored security solutions for events, venues, and businesses throughout the Greater Manchester region.</p>
+              <div className="text-center mt-4">
+                <Link to="/locations/manchester" className="inline-block bg-slate-600 text-white py-2 px-4 rounded hover:bg-slate-700 transition-colors">
+                  Manchester Security Services
+                </Link>
+              </div>
             </div>
           </div>
         </div>

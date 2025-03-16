@@ -1,6 +1,7 @@
 
 import { Shield, Zap, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { 
   Breadcrumb,
   BreadcrumbList,
@@ -13,6 +14,13 @@ import {
 const About = () => {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>About Fortis Security | Professional Security in Yorkshire & Manchester</title>
+        <meta name="description" content="Learn about Fortis Security, Yorkshire's trusted provider of professional security services across Yorkshire and Greater Manchester. Offering door supervision, manned guarding, and event security." />
+        <meta name="keywords" content="about Fortis Security, professional security Yorkshire, security company Manchester, door supervision, event security" />
+        <link rel="canonical" href="https://www.fortissecured.co.uk/about" />
+      </Helmet>
+      
       <section className="container mx-auto px-4 py-16">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
@@ -50,7 +58,7 @@ const About = () => {
               and clients.
             </p>
             
-            <p className="text-lg text-center md:text-left">
+            <p className="text-lg text-center md:text-left mb-6">
               Our primary goal is to deliver outstanding service through our dedicated team,
               which is trained in industry best practices and participates in continuous
               professional development opportunities. Investing in our employees ensures
@@ -59,9 +67,12 @@ const About = () => {
               on mutual respect, dedication, and a commitment to excellence.
             </p>
             
-            <div className="mt-6">
-              <Link to="/services" className="text-fortis-dark-blue font-semibold hover:underline">
-                View our security services in Yorkshire →
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Link to="/locations/yorkshire" className="text-fortis-dark-blue font-semibold hover:underline">
+                Security services in Yorkshire →
+              </Link>
+              <Link to="/locations/manchester" className="text-fortis-dark-blue font-semibold hover:underline">
+                Security services in Manchester →
               </Link>
             </div>
           </div>
@@ -93,13 +104,13 @@ const About = () => {
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <Zap className="h-12 w-12 text-slate-700 mb-4" />
               <h3 className="text-xl font-bold mb-2">24/7 Availability</h3>
-              <p className="text-gray-600">Round-the-clock security services and support for businesses across Yorkshire</p>
+              <p className="text-gray-600">Round-the-clock security services and support for businesses across Yorkshire and Manchester</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <Users className="h-12 w-12 text-slate-700 mb-4" />
               <h3 className="text-xl font-bold mb-2">Experienced Team</h3>
-              <p className="text-gray-600">Years of security industry expertise and knowledge in the Yorkshire region</p>
+              <p className="text-gray-600">Years of security industry expertise and knowledge in the Yorkshire and Manchester regions</p>
             </div>
           </div>
         </div>

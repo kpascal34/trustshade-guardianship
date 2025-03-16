@@ -3,6 +3,7 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { useEffect } from "react";
 import emailjs from "emailjs-com";
+import { Helmet } from "react-helmet";
 import { 
   Breadcrumb,
   BreadcrumbList,
@@ -20,6 +21,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Contact Fortis Security | Yorkshire & Manchester Security Services</title>
+        <meta name="description" content="Contact Fortis Security for professional security services in Yorkshire and Manchester. Get in touch for door supervision, manned guarding, and event security needs." />
+        <meta name="keywords" content="contact security company, Yorkshire security contact, Manchester security contact, professional security services" />
+        <link rel="canonical" href="https://www.fortissecured.co.uk/contact" />
+      </Helmet>
+      
       <section className="container mx-auto px-4 py-16">
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
@@ -74,6 +82,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold text-lg">Service Areas</h3>
                   <p>Yorkshire & Greater Manchester</p>
+                  <div className="mt-2 space-y-1 text-sm text-gray-700">
+                    <p>Leeds, Sheffield, York, Bradford (Yorkshire)</p>
+                    <p>Manchester, Salford, Bolton, Stockport (Greater Manchester)</p>
+                  </div>
                 </div>
               </div>
             </div>
