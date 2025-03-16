@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Shield, Clock, UserCheck, FileSearch, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,34 +22,41 @@ const Home = () => {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
+          <div className="flex justify-center md:justify-start mb-6">
+            <img 
+              src="/lovable-uploads/85e55acd-e80c-4729-9c4e-2ab194a18f37.png" 
+              alt="Fortis Security Logo" 
+              className="h-32 w-auto"
+            />
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Your Trusted Partner in Security Solutions
           </h1>
           <p className="text-lg mb-8 text-gray-700">At Fortis Security, we specialise in bespoke security services tailored to your needs. Operating across Yorkshire and Manchester, we ensure a safe environment for businesses and events.</p>
           <div className="flex justify-center w-full">
             <Link to="/contact" className="inline-block bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors px-[37px]">
-              FOLLOW US
+              CONTACT US
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4 object-fill">
-          <div>
-            <img alt="Security guard at venue entry" src="/lovable-uploads/90157812-0db3-45cb-bf57-132c99a51ae1.jpg" className="w-full h-auto rounded-lg shadow-md object-fill" />
+        <div className="grid grid-cols-2 grid-rows-3 gap-4 h-full">
+          <div className="w-full h-full">
+            <img alt="Security guard at venue entry" src="/lovable-uploads/90157812-0db3-45cb-bf57-132c99a51ae1.jpg" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
-          <div>
-            <img alt="Security guard at gated venue" src="/lovable-uploads/9af25a0f-05e0-4ecc-9585-7c8f91490297.png" className="w-full h-auto rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img alt="Security guard at gated venue" src="/lovable-uploads/9af25a0f-05e0-4ecc-9585-7c8f91490297.png" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
-          <div>
-            <img alt="Security guard at venue entrance" src="/lovable-uploads/10e86f82-63d2-409b-a59b-e8fd392779e5.png" className="w-full h-auto rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img alt="Security guard at venue entrance" src="/lovable-uploads/10e86f82-63d2-409b-a59b-e8fd392779e5.png" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
-          <div>
-            <img alt="Event security guard" src="/lovable-uploads/35720d8f-0822-49a9-85e5-cc304a038298.png" className="w-full h-auto rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img alt="Event security guard" src="/lovable-uploads/35720d8f-0822-49a9-85e5-cc304a038298.png" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
-          <div>
-            <img alt="Security staff at boxing event" src="/lovable-uploads/53d91845-5bd0-443b-b4df-262e7d65185b.png" className="w-full h-auto rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img alt="Security staff at boxing event" src="/lovable-uploads/53d91845-5bd0-443b-b4df-262e7d65185b.png" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
-          <div>
-            <img alt="Security guard at venue perimeter" src="/lovable-uploads/96449b0d-cc0b-4f46-9807-52a3de0fecef.png" className="w-full h-auto rounded-lg shadow-md" />
+          <div className="w-full h-full">
+            <img alt="Security guard at venue perimeter" src="/lovable-uploads/96449b0d-cc0b-4f46-9807-52a3de0fecef.png" className="w-full h-full rounded-lg shadow-md object-cover" />
           </div>
         </div>
       </section>
