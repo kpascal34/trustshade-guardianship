@@ -1,84 +1,195 @@
 
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const CookiesPolicy = () => {
   return (
-    <div className="container mx-auto py-12 px-4">
-      <Helmet>
-        <title>Cookies Policy | Fortis Security</title>
-        <meta name="description" content="Fortis Security's cookies policy explains how we use cookies on our website." />
-      </Helmet>
-      
-      <h1 className="text-3xl font-bold text-fortis-dark-blue mb-8">Cookies Policy</h1>
-      
-      <div className="space-y-6 text-gray-700">
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">What Are Cookies</h2>
-          <p>
-            As is common practice with almost all professional websites, this site uses cookies, which are tiny files that are downloaded to your computer, to improve your experience. This page describes what information they gather, how we use it, and why we sometimes need to store these cookies. We will also share how you can prevent these cookies from being stored; however, this may downgrade or 'break' certain elements of the site's functionality.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">How We Use Cookies</h2>
-          <p>
-            We use cookies for a variety of reasons detailed below. Unfortunately, in most cases, there are no industry standard options for disabling cookies without completely disabling the functionality and features they add to this site. It is recommended that you leave on all cookies if you are not sure whether you need them or not in case they are used to provide a service that you use.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">Disabling Cookies</h2>
-          <p>
-            You can prevent the setting of cookies by adjusting the settings on your browser (see your browser Help for how to do this). Be aware that disabling cookies will affect the functionality of this and many other websites that you visit. Disabling cookies will usually result in also disabling certain functionality and features of this site. Therefore it is recommended that you do not disable cookies.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">The Cookies We Set</h2>
-          <ul className="list-disc ml-6 space-y-2">
-            <li>
-              <strong>Account related cookies:</strong> If you create an account with us, we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out; however, in some cases, they may remain afterward to remember your site preferences when logged out.
-            </li>
-            <li>
-              <strong>Login related cookies:</strong> We use cookies when you are logged in so that we can remember this fact. This prevents you from having to log in every single time you visit a new page. These cookies are typically removed or cleared when you log out to ensure that you can only access restricted features and areas when logged in.
-            </li>
-            <li>
-              <strong>Forms related cookies:</strong> When you submit data through a form such as those found on contact pages or comment forms, cookies may be set to remember your user details for future correspondence.
-            </li>
-            <li>
-              <strong>Site preferences cookies:</strong> In order to provide you with a great experience on this site, we provide the functionality to set your preferences for how this site runs when you use it. In order to remember your preferences, we need to set cookies so that this information can be called whenever you interact with a page that is affected by your preferences.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">Third Party Cookies</h2>
-          <p>
-            In some special cases, we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.
-          </p>
-          <ul className="list-disc ml-6 space-y-2 mt-2">
-            <li>
-              This site uses Google Analytics, which is one of the most widespread and trusted analytics solutions on the web, to help us understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.
-            </li>
-            <li>
-              From time to time, we test new features and make subtle changes to the way that the site is delivered. When we are still testing new features, these cookies may be used to ensure that you receive a consistent experience whilst on the site whilst ensuring we understand which optimizations our users appreciate the most.
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold text-fortis-dark-blue mb-4">More Information</h2>
-          <p>
-            Hopefully, that has clarified things for you, and as was previously mentioned, if there is something that you aren't sure whether you need or not, it's usually safer to leave cookies enabled in case it does interact with one of the features you use on our site.
-          </p>
-          <p className="mt-2">
-            If you are still looking for more information, you can contact us through one of our preferred contact methods:
-          </p>
-          <ul className="list-disc ml-6 mt-2">
-            <li>Email: privacy@fortissecurity.com</li>
-            <li>Phone: +44 123 456 7890</li>
-          </ul>
-        </section>
+    <div className="min-h-screen pt-24 pb-16">
+      <div className="container mx-auto px-4">
+        <Helmet>
+          <title>Cookies Policy | Fortis Security</title>
+          <meta name="description" content="Fortis Security's cookies policy explains how we use cookies on our website." />
+        </Helmet>
+        
+        <div className="mb-8">
+          <Link
+            to="/"
+            className="inline-flex items-center text-fortis-light-blue hover:text-fortis-dark-blue transition-colors"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Link>
+        </div>
+        
+        <div className="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+          <h1 className="text-3xl font-bold text-fortis-dark-blue mb-6">Cookie Policy</h1>
+          
+          <div className="prose prose-blue max-w-none text-gray-700">
+            <p className="lead-text mb-4">
+              <strong>Last Updated:</strong> 12-02-25
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Introduction</h2>
+            <p>
+              This Cookie Policy elucidates how Fortis Security ("we," "us," or "our") utilises cookies and similar technologies during your visit to our website. We implement cookies to improve the browsing experience, analyse website traffic, and personalise content. This policy provides comprehensive information regarding what cookies entail, how we use them, and how individuals may control them.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">What Are Cookies?</h2>
+            <p>
+              Cookies are small text files stored on your device by websites during your visit. They serve various purposes, ranging from enabling essential website functionality to providing analytical data concerning visitor interactions with our site. Cookies may originate from our website (first-party cookies) or third-party services on our pages.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Types of Cookies We Utilise</h2>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Essential Cookies</h3>
+            <p>
+              Essential cookies are critical for the proper functioning of the website. They enable fundamental features such as page navigation and access to secure areas, and the functionality of our site is contingent upon these cookies.
+            </p>
+            <p>
+              Essential cookies employed on our site include:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Session cookies for maintaining user sessions</li>
+              <li>Security cookies for the prevention of fraud</li>
+              <li>Technical cookies essential for system administration</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Performance and Analytics Cookies</h3>
+            <p>
+              Performance and analytics cookies collect and report anonymous information to help us understand how visitors engage with our website. The information gathered is utilised to enhance website performance and user experience.
+            </p>
+            <p>
+              Performance cookies present on our site include:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Analysis of website traffic</li>
+              <li>Tracking of page load times</li>
+              <li>Monitoring of errors</li>
+              <li>User behaviour analytics</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Functionality Cookies</h3>
+            <p>
+              Functionality cookies facilitate enhanced features and personalisation. They may be established by us or by third-party providers contributing services to our pages.
+            </p>
+            <p>
+              Functionality cookies incorporated on our site include:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Preferences for language selection</li>
+              <li>Content tailored to user location</li>
+              <li>Previously selected user preferences</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Marketing and Targeting Cookies</h3>
+            <p>
+              Marketing and targeting cookies track browsing behaviours to enable the delivery of advertisements that are likely to be of interest to the user. Typically, these cookies are placed by advertising networks with our authorisation.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">How We Utilise Specific Cookies</h2>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">First-Party Cookies</h3>
+            <p>
+              We utilise first-party cookies for the following purposes:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Retaining user preferences</li>
+              <li>Maintaining session information</li>
+              <li>Analysing website performance</li>
+              <li>Enhancing security features</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Third-Party Cookies</h3>
+            <p>
+              We may permit trusted third parties to establish cookies for the following objectives:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Analytics services (e.g., Google Analytics)</li>
+              <li>Integration with social media</li>
+              <li>Marketing and advertising purposes</li>
+              <li>Provision of security services</li>
+            </ul>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Cookie Management</h2>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Your Cookie Choices</h3>
+            <p>
+              Individuals possess the right to decide whether to accept or decline cookies. Cookie preferences may be exercised in the following manners:
+            </p>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Browser Settings</h3>
+            <p>
+              Most web browsers allow control over cookies via their settings preferences. To modify cookie settings, please consult your browser's help documentation:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>Google Chrome</li>
+              <li>Mozilla Firefox</li>
+              <li>Microsoft Edge</li>
+              <li>Safari</li>
+              <li>Opera</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Cookie Consent Tool</h3>
+            <p>
+              Our website incorporates a cookie consent management tool that enables you to select your cookie preferences upon your initial visit. You may modify these preferences at any time via our cookie settings panel.
+            </p>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Consequences of Disabling Cookies</h3>
+            <p>
+              Please be advised that if certain cookies are disabled, some features of our website may not function optimally. Specifically, essential cookies cannot be turned off, as they are necessary for the website's operation.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Data Collection and Privacy</h2>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Information We Collect</h3>
+            <p>
+              Through the use of cookies, we may collect the following information:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>IP addresses and location data</li>
+              <li>Browser type and settings</li>
+              <li>Operating system information</li>
+              <li>Pages visited and duration of visits</li>
+              <li>Referral sources</li>
+              <li>Device information</li>
+            </ul>
+            
+            <h3 className="text-lg font-semibold text-fortis-dark-blue mt-4 mb-2">Data Protection</h3>
+            <p>
+              We protect cookie data in alignment with our Privacy Policy and applicable data protection laws. For additional information regarding our handling of personal data, please refer to our <Link to="/privacy-policy" className="text-fortis-light-blue hover:text-fortis-dark-blue">Privacy Policy</Link>.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Updates to This Policy</h2>
+            <p>
+              This Cookie Policy may be updated periodically to reflect changes in our practices or for operational, legal, or regulatory reasons. The date at the top of this policy denotes when it was last updated.
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Contact Us</h2>
+            <p>
+              For inquiries regarding our Cookie Policy or our utilisation of cookies, please get in touch with us at:
+            </p>
+            <p className="ml-6 mt-2">
+              Fortis Security<br />
+              Email: privacy@fortissecurity.com<br />
+              Phone: 07762 853 255
+            </p>
+            
+            <h2 className="text-xl font-bold text-fortis-dark-blue mt-8 mb-4">Compliance</h2>
+            <p>
+              This Cookie Policy adheres to applicable data protection laws and regulations, including:
+            </p>
+            <ul className="list-disc ml-6 mb-4">
+              <li>General Data Protection Regulation (GDPR)</li>
+              <li>Privacy and Electronic Communications Regulations (PECR)</li>
+              <li>California Consumer Privacy Act (CCPA), where applicable</li>
+            </ul>
+            
+            <p className="mt-8">
+              By continuing to utilise our website, you consent to our use of cookies as described in this policy.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
