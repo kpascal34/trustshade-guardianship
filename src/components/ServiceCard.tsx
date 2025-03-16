@@ -7,9 +7,10 @@ interface ServiceCardProps {
   description: string;
   icon: React.ReactNode;
   imageSrc?: string;
+  imagePosition?: string;
 }
 
-const ServiceCard = ({ id, title, description, icon, imageSrc }: ServiceCardProps) => {
+const ServiceCard = ({ id, title, description, icon, imageSrc, imagePosition }: ServiceCardProps) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col h-full">
       <div className="mb-4">
@@ -18,7 +19,7 @@ const ServiceCard = ({ id, title, description, icon, imageSrc }: ServiceCardProp
             <img 
               src={imageSrc} 
               alt={title} 
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imagePosition || 'object-center'}`}
             />
           </div>
         ) : (

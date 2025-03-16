@@ -10,7 +10,8 @@ const Services = () => {
       title: "Door Supervision",
       icon: <div className="w-full flex items-center justify-center"><UserCheck className="h-6 w-6 text-blue-500" /></div>,
       description: "Licensed door supervisors for venues and events management.",
-      imageSrc: "/lovable-uploads/614d7012-2040-428a-a012-309202dbbcf7.png"
+      imageSrc: "/lovable-uploads/614d7012-2040-428a-a012-309202dbbcf7.png",
+      imagePosition: "object-bottom" // Adjust focus to bottom of image
     },
     {
       id: "manned-guarding",
