@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
@@ -51,6 +51,10 @@ const App = () => (
               <Route element={<ProtectedRoute />}>
                 {/* Add protected routes here */}
               </Route>
+              
+              {/* Handle special routes */}
+              <Route path="/sitemap.xml" element={<Navigate to="/sitemap.xml" replace />} />
+              <Route path="/robots.txt" element={<Navigate to="/robots.txt" replace />} />
               
               <Route path="*" element={<NotFound />} />
             </Route>

@@ -1,0 +1,10 @@
+
+User-agent: *
+Allow: /
+
+# Disallow auth-related pages
+Disallow: /login
+Disallow: /register
+
+# Sitemap location
+Sitemap: https://www.fortissecured.co.uk/sitemap.xml
