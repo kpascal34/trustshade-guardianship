@@ -1,8 +1,15 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "../components/ContactForm";
+import { useEffect } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+  useEffect(() => {
+    // Initialize EmailJS
+    emailjs.init("k.pascal@fortissecured.co.uk");
+  }, []);
+
   return (
     <div className="min-h-screen">
       <section className="container mx-auto px-4 py-16">

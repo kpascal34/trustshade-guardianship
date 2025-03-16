@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import emailjs from "emailjs-com";
 import {
   Select,
   SelectContent,
@@ -46,22 +47,50 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
+    // Prepare template params for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      service_interest: formData.service,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    // Send email using EmailJS
+    emailjs
+      .send(
+        "service_s40muhp", // Service ID
+        "template_pyx1via", // Template ID
+        templateParams,
+        "k.pascal@fortissecured.co.uk" // User ID (using email as provided)
+      )
+      .then(() => {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        // Reset form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          service: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("EmailJS error:", error);
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again.",
+          variant: "destructive",
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        service: "",
-        message: "",
-      });
-    }, 1500);
   };
 
   return (
