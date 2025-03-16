@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Shield, Users, CalendarClock, FileSearch, CheckCircle } from "lucide-react";
 import HeroSection from "../components/HeroSection";
@@ -17,24 +16,26 @@ interface ServiceInfo {
 const serviceData: Record<string, ServiceInfo> = {
   "door-supervision": {
     id: "door-supervision",
-    title: "Door Supervision",
+    title: "Door Supervisors",
     subtitle: "Professional door supervisors for venues and events",
     description: [
-      "Our SIA licensed door supervisors are highly trained professionals who ensure the safety and security of venues, their staff, and patrons. They provide a friendly yet authoritative presence, controlling access and maintaining order.",
-      "Door supervisors are a legal requirement for many licensed premises. Our team ensures full compliance with licensing regulations while providing exceptional customer service.",
-      "All our door supervisors undergo extensive training in conflict management, first aid, and customer service to handle various situations effectively and professionally."
+      "At Fortis Security, we take pride in providing exceptional door supervision services. We distinguish ourselves through our commitment to excellence, reliability, and ongoing improvement.",
+      "Customised Security Planning: We develop tailored security strategies for each client, considering venue requirements, peak times, and potential risks. This customised approach ensures adequate security while maintaining a welcoming atmosphere.",
+      "Venue Integration: Our door supervisors work seamlessly with your staff and systems, enhancing operations while maintaining professional boundaries and clear communication.",
+      "Professional Image: All our door supervisors are professionally uniform and maintain a neat appearance, enhancing your establishment's image while providing authoritative security."
     ],
     benefits: [
-      "Controlled access to your venue",
-      "Prevention of underage entry",
-      "Conflict management and de-escalation",
-      "Reduced incidents and liability",
-      "Enhanced customer experience",
-      "Regulatory compliance",
-      "Professional appearance and conduct"
+      "Enhanced Patron Safety and Confidence",
+      "Enhanced Security",
+      "Improved Professional Reputation",
+      "Cost-Effective Risk Management",
+      "Increased Operational Efficiency",
+      "Greater Peace of Mind",
+      "Compliance with Licensing Requirements",
+      "Professional and Courteous Customer Service"
     ],
     icon: <Shield className="h-12 w-12 text-fortis-light-blue" />,
-    heroImage: "/door-supervision.jpg"
+    heroImage: "/lovable-uploads/0a2b4052-f010-4350-b1cf-61d025b85f38.png"
   },
   "manned-guarding": {
     id: "manned-guarding",
