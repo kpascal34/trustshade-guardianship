@@ -87,7 +87,7 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-slate-50">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-neutral-50">
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="mx-auto bg-fortis-dark-blue p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                   <Phone className="h-6 w-6 text-white" />
