@@ -33,7 +33,7 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-3 gap-4 object-fill">
           <div>
-            <img alt="Security guard at venue entry" src="/lovable-uploads/90157812-0db3-45cb-bf57-132c99a51ae1.jpg" className="w-full h-auto rounded-lg shadow-md object-none" />
+            <img alt="Security guard at venue entry" src="/lovable-uploads/90157812-0db3-45cb-bf57-132c99a51ae1.jpg" className="w-full h-auto rounded-lg shadow-md object-fill" />
           </div>
           <div>
             <img alt="Security guard at gated venue" src="/lovable-uploads/9af25a0f-05e0-4ecc-9585-7c8f91490297.png" className="w-full h-auto rounded-lg shadow-md" />
