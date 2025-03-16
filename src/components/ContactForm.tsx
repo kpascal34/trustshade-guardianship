@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -62,8 +61,7 @@ const ContactForm = () => {
       .send(
         "service_s40muhp", // Service ID
         "template_pyx1via", // Template ID
-        templateParams,
-        "k.pascal@fortissecured.co.uk" // User ID (using email as provided)
+        templateParams
       )
       .then(() => {
         toast({
