@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Toaster } from "@/components/ui/toaster";
 import FloatingCTA from "./FloatingCTA";
+import CookieConsent from "./CookieConsent";
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
       </main>
       <Footer />
       <FloatingCTA />
+      <CookieConsent />
       <Toaster />
     </div>
   );

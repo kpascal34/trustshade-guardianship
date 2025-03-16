@@ -20,7 +20,7 @@ const ServiceCard = ({ id, title, description, icon, imageSrc, imagePosition }: 
             <AspectRatio ratio={4/3} className="h-48">
               <img 
                 src={imageSrc} 
-                alt={title} 
+                alt={`${title} service provided by Fortis Security`} 
                 className={`w-full h-full object-cover transition-transform duration-300 hover:scale-105 ${imagePosition || 'object-center'}`}
                 width="300"
                 height="225"
