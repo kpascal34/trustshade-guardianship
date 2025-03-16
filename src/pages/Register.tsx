@@ -37,8 +37,8 @@ const Register = () => {
   const executeRecaptcha = async () => {
     if (window.grecaptchaEnterprise) {
       return new Promise<string>((resolve) => {
-        window.grecaptchaEnterprise.enterprise.ready(async () => {
-          const token = await window.grecaptchaEnterprise.enterprise.execute(
+        window.grecaptchaEnterprise.ready(async () => {
+          const token = await window.grecaptchaEnterprise.execute(
             '6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo', 
             { action: 'REGISTER' }
           );

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
@@ -217,7 +218,7 @@ const ContactForm = () => {
       
       <div className="flex justify-center my-4">
         <ReCAPTCHA
-          sitekey="6Ld-hukqAAAAAHoT0TKKe8OclWgdnhcOTlh8QZiB"
+          sitekey="6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo"
           onChange={handleRecaptchaChange}
         />
       </div>

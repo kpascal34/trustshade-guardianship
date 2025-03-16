@@ -129,7 +129,7 @@ const Login = () => {
 
           <div className="flex justify-center my-4">
             <ReCAPTCHA
-              sitekey="6Ld-hukqAAAAAHoT0TKKe8OclWgdnhcOTlh8QZiB"
+              sitekey="6Lf7GvYqAAAAAPRCHxDWIgKRn9YoCKC6liuqkRqo"
               onChange={handleRecaptchaChange}
             />
           </div>
