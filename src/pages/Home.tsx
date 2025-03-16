@@ -20,7 +20,7 @@ const Home = () => {
   return <div className="min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="my-0 rounded-none">
+        <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Your Trusted Partner in Security Solutions
           </h1>
@@ -55,7 +55,7 @@ const Home = () => {
 
       {/* About Us Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-slate-200">
+        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img src="/lovable-uploads/4588449b-9ad4-4bf5-a62f-aeaf3f168c55.png" alt="Fortis Security Logo" className="max-w-xs mx-auto md:mx-0" />
           </div>
@@ -84,7 +84,7 @@ const Home = () => {
 
       {/* Contact Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 bg-slate-200">
+        <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -104,7 +104,7 @@ const Home = () => {
                 <p className="text-gray-700">info@fortissecured.co.uk</p>
               </div>
               
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
+              <div className="p-6 rounded-lg shadow-md text-center my-0 bg-slate-200 py-[20px]">
                 <div className="mx-auto bg-fortis-dark-blue p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4">
                   <MapPin className="h-6 w-6 text-white" />
                 </div>
