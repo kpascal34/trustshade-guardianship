@@ -10,28 +10,28 @@ const Services = () => {
       title: "Door Supervision",
       icon: <div className="w-full flex items-center justify-center"><UserCheck className="h-6 w-6 text-blue-500" /></div>,
       description: "Licensed door supervisors for venues and events management.",
-      imageSrc: "/Door-Sup.jpg"
+      imageSrc: "/lovable-uploads/614d7012-2040-428a-a012-309202dbbcf7.png"
     },
     {
       id: "manned-guarding",
       title: "Manned Guarding",
       icon: <div className="bg-blue-600 w-full h-32 flex items-center justify-center rounded"><Shield className="h-6 w-6 text-white" /></div>,
       description: "Professional security personnel providing 24/7 protection for your premises.",
-      imageSrc: "/venue-security.jpg"
+      imageSrc: "/lovable-uploads/fcbc0118-0f7d-4509-a838-02840cbcd291.png"
     },
     {
       id: "event-security",
       title: "Event Security",
       icon: <div className="w-full flex items-center justify-center"><Clock className="h-6 w-6 text-blue-500" /></div>,
       description: "Comprehensive security solutions for events of all sizes.",
-      imageSrc: "/patrol-service.jpg"
+      imageSrc: "/lovable-uploads/0e4c5c11-900c-415f-8342-77dc862a8dec.png"
     },
     {
       id: "risk-assessments",
       title: "Risk Assessment",
       icon: <div className="w-full flex items-center justify-center"><FileSearch className="h-6 w-6 text-blue-500" /></div>,
       description: "Expert security risk assessment and consultation services.",
-      imageSrc: "/event-crowd-control.jpg"
+      imageSrc: "/lovable-uploads/767234e9-6d8c-4d52-8d7a-f128af3e8eee.png"
     },
   ];
 
