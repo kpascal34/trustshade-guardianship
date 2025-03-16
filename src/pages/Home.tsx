@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Shield, Clock, UserCheck, FileSearch, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,28 +27,28 @@ const Home = () => {
           <p className="text-lg mb-8 text-gray-700">At Fortis Security, we specialise in bespoke security services tailored to your needs. Operating across Yorkshire and Manchester, we ensure a safe environment for businesses and events.</p>
           <div className="flex justify-center w-full">
             <Link to="/contact" className="inline-block bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors px-[37px]">
-              CONTACT US
+              FOLLOW US
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-4 object-fill">
           <div>
-            <img alt="Security guard at venue entry" src="/lovable-uploads/337243a0-d803-45d9-80f5-197f22654359.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Security guard at venue entry" src="/lovable-uploads/337243a0-d803-45d9-80f5-197f22654359.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           <div>
-            <img alt="Security guard at gated venue" src="/lovable-uploads/9af25a0f-05e0-4ecc-9585-7c8f91490297.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Security guard at gated venue" src="/lovable-uploads/9af25a0f-05e0-4ecc-9585-7c8f91490297.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           <div>
-            <img alt="Security guard at venue entrance" src="/lovable-uploads/10e86f82-63d2-409b-a59b-e8fd392779e5.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Security guard at venue entrance" src="/lovable-uploads/10e86f82-63d2-409b-a59b-e8fd392779e5.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           <div>
-            <img alt="Event security guard" src="/lovable-uploads/35720d8f-0822-49a9-85e5-cc304a038298.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Event security guard" src="/lovable-uploads/35720d8f-0822-49a9-85e5-cc304a038298.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           <div>
-            <img alt="Security staff at boxing event" src="/lovable-uploads/53d91845-5bd0-443b-b4df-262e7d65185b.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Security staff at boxing event" src="/lovable-uploads/53d91845-5bd0-443b-b4df-262e7d65185b.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
           <div>
-            <img alt="Security guard at venue perimeter" src="/lovable-uploads/96449b0d-cc0b-4f46-9807-52a3de0fecef.png" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img alt="Security guard at venue perimeter" src="/lovable-uploads/96449b0d-cc0b-4f46-9807-52a3de0fecef.png" className="w-full h-auto rounded-lg shadow-md" />
           </div>
         </div>
       </section>
