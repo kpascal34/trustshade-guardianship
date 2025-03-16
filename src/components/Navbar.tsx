@@ -1,7 +1,7 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'lucide-react';
-import logo from '../assets/logo.png';
+import { Menu, Shield } from 'lucide-react';
 import AuthNavItems from "./AuthNavItems";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Fortis Secured Logo" className="h-8 mr-2" />
+            <Shield className="h-8 w-8 mr-2 text-primary" />
             <span className="font-semibold text-lg">Fortis Secured</span>
           </Link>
 
