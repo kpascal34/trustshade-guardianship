@@ -3,6 +3,14 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "../components/ContactForm";
 import { useEffect } from "react";
 import emailjs from "emailjs-com";
+import { 
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator
+} from "@/components/ui/breadcrumb";
 
 const Contact = () => {
   useEffect(() => {
@@ -13,12 +21,28 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <section className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold mb-6">Contact Us</h1>
+        <Breadcrumb className="mb-8">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Contact</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        
+        <h1 className="text-4xl font-bold mb-6">Contact Fortis Security</h1>
+        <p className="text-lg mb-8 max-w-3xl">
+          Get in touch with Yorkshire's trusted security provider for professional security services across Yorkshire and Greater Manchester.
+        </p>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
+            <h2 className="text-2xl font-semibold mb-6">Our Contact Information</h2>
             <p className="text-lg mb-8">
-              Get in touch with us for any inquiries about our security services. Our
+              Get in touch with us for any inquiries about our security services in Yorkshire and Manchester. Our
               team is ready to assist you 24/7.
             </p>
             
@@ -48,7 +72,7 @@ const Contact = () => {
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Address</h3>
+                  <h3 className="font-semibold text-lg">Service Areas</h3>
                   <p>Yorkshire & Greater Manchester</p>
                 </div>
               </div>
@@ -56,7 +80,7 @@ const Contact = () => {
           </div>
           
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-6">Send Message</h2>
+            <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
             <ContactForm />
           </div>
         </div>
