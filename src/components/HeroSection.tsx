@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 interface HeroSectionProps {
   title: string;
@@ -36,15 +37,18 @@ const HeroSection = ({
             {subtitle}
           </p>
         )}
-        {ctaText && ctaLink && (
-          <Button
-            asChild
-            size="lg"
-            className="bg-fortis-light-blue hover:bg-fortis-dark-blue text-white px-8 py-6"
-          >
-            <Link to={ctaLink}>{ctaText}</Link>
-          </Button>
-        )}
+        
+        <div className="flex justify-center space-x-6">
+          <a href="https://www.facebook.com/Fortissecured/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <Facebook className="h-8 w-8 text-white hover:text-fortis-light-blue transition-colors" />
+          </a>
+          <a href="https://www.instagram.com/fortis_security_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <Instagram className="h-8 w-8 text-white hover:text-fortis-light-blue transition-colors" />
+          </a>
+          <a href="https://www.linkedin.com/company/fortis-security-group/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <Linkedin className="h-8 w-8 text-white hover:text-fortis-light-blue transition-colors" />
+          </a>
+        </div>
       </div>
     </div>
   );
