@@ -11,9 +11,9 @@ const FloatingCTA = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end space-y-4">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start space-y-4">
       {isOpen && (
-        <div className="flex flex-col space-y-3 items-end">
+        <div className="flex flex-col space-y-3 items-start">
           <a
             href="https://wa.me/447762853255"
             target="_blank"

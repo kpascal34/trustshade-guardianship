@@ -1,19 +1,22 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'lucide-react';
 import AuthNavItems from "./AuthNavItems";
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+  
   return <nav className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src="/lovable-uploads/9ae772d2-cd83-4490-95d9-a8814b3a930f.png" alt="Fortis Security Logo" className="h-10 mr-2" />
-            
+            <img src="/lovable-uploads/9ae772d2-cd83-4490-95d9-a8814b3a930f.png" alt="Fortis Security Logo" className="h-14 mr-2" />
           </Link>
 
           {/* Navigation Links - Desktop */}
@@ -56,4 +59,5 @@ const Navbar = () => {
       </div>
     </nav>;
 };
+
 export default Navbar;
