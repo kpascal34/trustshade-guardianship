@@ -25,7 +25,6 @@ const Navbar = () => {
             <Link to="/about" className="text-sm hover:text-gray-500">About</Link>
             <Link to="/services" className="text-sm hover:text-gray-500">Services</Link>
             <Link to="/contact" className="text-sm hover:text-gray-500">Contact</Link>
-            <Link to="/faq" className="text-sm hover:text-gray-500">FAQ</Link>
           </div>
 
           {/* Auth Navigation Items */}
@@ -49,7 +48,6 @@ const Navbar = () => {
           <Link to="/about" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</Link>
           <Link to="/services" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Services</Link>
           <Link to="/contact" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</Link>
-          <Link to="/faq" className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">FAQ</Link>
           
           {/* Mobile Auth Navigation */}
           <div className="pt-2 pb-2 border-t border-gray-200">
