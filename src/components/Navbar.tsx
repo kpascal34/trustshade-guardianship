@@ -1,16 +1,32 @@
+
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-  return <header className="w-full bg-black text-white">
-      <div className="container mx-auto px-4 flex justify-end items-center py-3 bg-gray-900">
+
+  return (
+    <header className="w-full bg-black text-white">
+      <div className="container mx-auto px-4 flex justify-between items-center py-3 bg-gray-900">
+        {/* Logo */}
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/lovable-uploads/57aa418c-886f-405e-8ac3-5d0a4b5f6e01.png" 
+            alt="Fortis Security Logo" 
+            className="h-12 w-auto"
+          />
+        </Link>
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
           <Link to="/" className="text-white hover:text-gray-300 transition-colors">
             Home
@@ -36,7 +52,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isMenuOpen && <div className="md:hidden bg-black w-full py-4 shadow-md animate-fade-in">
+      {isMenuOpen && (
+        <div className="md:hidden bg-black w-full py-4 shadow-md animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <Link to="/" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
               Home
@@ -54,7 +71,10 @@ const Navbar = () => {
               Log in
             </Link>
           </div>
-        </div>}
-    </header>;
+        </div>
+      )}
+    </header>
+  );
 };
+
 export default Navbar;
