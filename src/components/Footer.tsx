@@ -1,5 +1,7 @@
+
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="text-white py-10 bg-gray-800">
@@ -74,13 +76,13 @@ const Footer = () => {
               <li>info@fortissecured.co.uk</li>
               <li>077762 853255</li>
               <li className="flex items-center space-x-4 mt-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a href="https://www.facebook.com/Fortissecured/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <Facebook className="h-5 w-5 text-gray-300 hover:text-white" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <Twitter className="h-5 w-5 text-gray-300 hover:text-white" />
+                <a href="https://www.instagram.com/fortis_security_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram className="h-5 w-5 text-gray-300 hover:text-white" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/company/fortis-security-group/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <Linkedin className="h-5 w-5 text-gray-300 hover:text-white" />
                 </a>
               </li>
