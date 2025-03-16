@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Shield, Clock, UserCheck, FileSearch, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,11 +22,7 @@ const Home = () => {
       <section className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
           <div className="flex justify-center md:justify-start mb-6">
-            <img 
-              src="/lovable-uploads/85e55acd-e80c-4729-9c4e-2ab194a18f37.png" 
-              alt="Fortis Security Logo" 
-              className="h-32 w-auto"
-            />
+            <img src="/lovable-uploads/85e55acd-e80c-4729-9c4e-2ab194a18f37.png" alt="Fortis Security Logo" className="h-80 w-auto object-scale-down" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
             Your Trusted Partner in Security Solutions
