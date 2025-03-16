@@ -1,79 +1,69 @@
-
-import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
+import logo from '../assets/logo.png';
+import AuthNavItems from "./AuthNavItems";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <header className="w-full bg-black text-white">
-      <div className="container mx-auto px-4 flex justify-between items-center py-3 bg-gray-900">
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img 
-            src="/lovable-uploads/57aa418c-886f-405e-8ac3-5d0a4b5f6e01.png" 
-            alt="Fortis Security Logo" 
-            className="h-12 w-auto"
-          />
-        </Link>
+    <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Fortis Secured Logo" className="h-8 mr-2" />
+            <span className="font-semibold text-lg">Fortis Secured</span>
+          </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-white hover:text-gray-300 transition-colors">
-            Home
-          </Link>
-          <Link to="/about" className="text-white hover:text-gray-300 transition-colors">
-            About
-          </Link>
-          <Link to="/services" className="text-white hover:text-gray-300 transition-colors">
-            Services
-          </Link>
-          <Link to="/contact" className="text-white hover:text-gray-300 transition-colors">
-            Contact
-          </Link>
-          <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 rounded transition-colors ml-4">
-            Log in
-          </Link>
-        </nav>
+          {/* Navigation Links - Desktop */}
+          <div className="hidden md:flex space-x-8">
+            <Link to="/" className="hover:text-gray-500">Home</Link>
+            <Link to="/about" className="hover:text-gray-500">About</Link>
+            <Link to="/services" className="hover:text-gray-500">Services</Link>
+            <Link to="/contact" className="hover:text-gray-500">Contact</Link>
+            <Link to="/faq" className="hover:text-gray-500">FAQ</Link>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden text-white p-2" onClick={toggleMenu} aria-label="Toggle Menu">
-          <Menu size={24} />
-        </button>
-      </div>
+          {/* Auth Navigation Items */}
+          <div className="hidden md:block">
+            <AuthNavItems />
+          </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-black w-full py-4 shadow-md animate-fade-in">
-          <div className="container mx-auto px-4 flex flex-col space-y-4">
-            <Link to="/" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
-              Home
-            </Link>
-            <Link to="/about" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
-              About
-            </Link>
-            <Link to="/services" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
-              Services
-            </Link>
-            <Link to="/contact" className="text-white hover:text-gray-300 py-2 transition-colors" onClick={closeMenu}>
-              Contact
-            </Link>
-            <Link to="/login" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors" onClick={closeMenu}>
-              Log in
-            </Link>
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={toggleMobileMenu}
+              className="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700"
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
-      )}
-    </header>
+      </div>
+
+      {/* Mobile menu, show/hide based on menu state */}
+      <div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</Link>
+          <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</Link>
+          <Link to="/services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Services</Link>
+          <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</Link>
+          <Link to="/faq" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">FAQ</Link>
+          
+          {/* Mobile Auth Navigation */}
+          <div className="pt-4 pb-3 border-t border-gray-200">
+            <AuthNavItems />
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
