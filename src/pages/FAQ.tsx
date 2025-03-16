@@ -46,10 +46,9 @@ const FAQ = () => {
               How quickly can you provide security services?
             </AccordionTrigger>
             <AccordionContent className="text-gray-700">
-              We pride ourselves on our rapid response capabilities. For standard security needs, we can
-              typically deploy personnel within 24-48 hours. For emergency situations, we offer expedited
-              deployment options. Contact us with your specific timeframe, and we'll work to accommodate
-              your needs.
+              We typically arrange for deployment within 24 to 48 hours of the agreement for standard security contracts. 
+              In addition, our rapid response team is on standby for unforeseen emergencies and can be mobilised immediately. 
+              If you have urgent security needs, we encourage you to contact us directly for immediate assistance.
             </AccordionContent>
           </AccordionItem>
 
@@ -61,19 +60,19 @@ const FAQ = () => {
               All Fortis Security officers undergo comprehensive training that exceeds industry standards. 
               This includes SIA licensing requirements, first aid certification, conflict management, 
               emergency response procedures, and customer service training. Additionally, we provide 
-              specialized training relevant to specific deployment environments.
+              specialised training relevant to specific deployment environments.
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-5">
             <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
-              Do you offer customized security solutions?
+              Do you offer customised security solutions?
             </AccordionTrigger>
             <AccordionContent className="text-gray-700">
               Absolutely. We understand that every client has unique security needs. Our approach begins
               with a thorough assessment of your specific requirements, allowing us to design and implement
               a tailored security solution. Whether you need short-term event security or long-term manned
-              guarding, we customize our services to match your exact specifications.
+              guarding, we customise our services to match your exact specifications.
             </AccordionContent>
           </AccordionItem>
 
@@ -95,7 +94,7 @@ const FAQ = () => {
             <AccordionContent className="text-gray-700">
               Our security personnel are extensively trained in emergency response protocols. They are 
               equipped to handle various situations including medical emergencies, fire evacuation, 
-              suspicious behavior, and other security threats. We maintain clear communication channels 
+              suspicious behaviour, and other security threats. We maintain clear communication channels 
               with emergency services and follow established procedures to ensure swift and appropriate 
               responses to any situation.
             </AccordionContent>
@@ -114,17 +113,58 @@ const FAQ = () => {
 
           <AccordionItem value="item-9">
             <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
-              How are your security services priced?
+              Do your security officers wear uniforms?
             </AccordionTrigger>
             <AccordionContent className="text-gray-700">
-              Our pricing is competitive and transparent, based on factors such as the type of service
-              required, number of security personnel needed, duration of service, and specific risk 
-              factors. We provide detailed quotes after understanding your exact requirements. Contact
-              us for a no-obligation consultation and quote.
+              Yes, our security officers are easily identifiable in professional uniforms unless the situation 
+              necessitates plainclothes security for specific assignments. Our uniforms are designed to project 
+              an authoritative and professional image, ensuring that our officers are readily recognised by staff, 
+              visitors, and customers, which enhances the overall security presence.
             </AccordionContent>
           </AccordionItem>
 
           <AccordionItem value="item-10">
+            <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
+              How do you determine what security services we need?
+            </AccordionTrigger>
+            <AccordionContent className="text-gray-700">
+              We begin every engagement with a comprehensive security assessment of your property or event. 
+              One of our experienced security consultants will visit your site, engage with you to discuss 
+              your concerns and requirements, identify any potential vulnerabilities, and recommend tailored 
+              security measures. This consultative approach ensures you receive security services precisely 
+              aligned with your needs and risks.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-11">
+            <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
+              What is the pricing structure for your services?
+            </AccordionTrigger>
+            <AccordionContent className="text-gray-700">
+              Our pricing structure is competitive and crystal clear, with rates provided upon request. 
+              We create customised quotes based on several factors, including:
+              <ul className="list-disc ml-6 mt-2">
+                <li>The number of security personnel needed for your assignment.</li>
+                <li>The hours of coverage required.</li>
+                <li>Any specialised services or equipment that may be necessary.</li>
+                <li>Location-specific factors and our findings from the risk assessment.</li>
+              </ul>
+              <p className="mt-2">Please get in touch with us directly for a detailed quote tailored to your security needs.</p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-12">
+            <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
+              Do you require long-term contracts?
+            </AccordionTrigger>
+            <AccordionContent className="text-gray-700">
+              We understand that every client has unique needs, so we offer flexibility regarding contract duration. 
+              From long-term agreements for ongoing security solutions to short-term arrangements for temporary needs, 
+              we can accommodate various client preferences to ensure your security needs are effectively met.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-13">
             <AccordionTrigger className="text-lg font-medium text-fortis-dark-blue">
               How can I request a quote for security services?
             </AccordionTrigger>
