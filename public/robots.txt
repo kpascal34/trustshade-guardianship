@@ -1,5 +1,14 @@
+
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /services
+Allow: /contact
+Allow: /locations/
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /cookies-policy
+Allow: /faq
 
 # Disallow auth-related pages
 Disallow: /login
