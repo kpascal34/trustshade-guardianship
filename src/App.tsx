@@ -47,9 +47,13 @@ const App = () => (
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               
-              {/* Protected routes */}
+              {/* Protected routes based on ERD diagram */}
               <Route element={<ProtectedRoute />}>
-                {/* Add protected routes here */}
+                {/* These would be added when implementing the dashboard */}
+                {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+                {/* <Route path="/shifts" element={<Shifts />} /> */}
+                {/* <Route path="/documents" element={<Documents />} /> */}
+                {/* <Route path="/invoices" element={<Invoices />} /> */}
               </Route>
               
               {/* Handle special routes */}

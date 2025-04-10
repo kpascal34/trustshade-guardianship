@@ -73,6 +73,15 @@ const Login = () => {
           onPasswordChange={setPassword}
           onSubmit={handleSubmit}
         />
+        
+        <div className="mt-4 text-sm text-gray-600">
+          <p>Staff can view:</p>
+          <ul className="list-disc pl-5 mt-2 space-y-1">
+            <li>Assigned shifts</li>
+            <li>Required compliance documents</li>
+            <li>Invoices related to their work</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

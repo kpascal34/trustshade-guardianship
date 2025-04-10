@@ -27,15 +27,12 @@ const AuthNavItems = () => {
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center">
       <Button variant="outline" size="sm" asChild>
         <Link to="/login" className="flex items-center gap-2">
           <UserCircle className="h-4 w-4" />
           <span>Login</span>
         </Link>
-      </Button>
-      <Button size="sm" asChild>
-        <Link to="/register">Register</Link>
       </Button>
     </div>
   );
