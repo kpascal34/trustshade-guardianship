@@ -28,7 +28,6 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      // Proceed with login without reCAPTCHA
       const { error } = await signIn(email, password);
       
       if (error) {
@@ -40,7 +39,7 @@ const Login = () => {
         description: "Logged in successfully",
       });
       
-      navigate("/");
+      navigate("/dashboard");
     } catch (error: any) {
       toast({
         title: "Error",
@@ -73,15 +72,6 @@ const Login = () => {
           onPasswordChange={setPassword}
           onSubmit={handleSubmit}
         />
-        
-        <div className="mt-4 text-sm text-gray-600">
-          <p>Staff can view:</p>
-          <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li>Assigned shifts</li>
-            <li>Required compliance documents</li>
-            <li>Invoices related to their work</li>
-          </ul>
-        </div>
       </div>
     </div>
   );

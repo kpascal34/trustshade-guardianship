@@ -21,6 +21,10 @@ import Register from "./pages/Register";
 import LocationYorkshire from "./pages/LocationYorkshire";
 import LocationManchester from "./pages/LocationManchester";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Dashboard from "./pages/Dashboard";
+import Shifts from "./pages/Shifts";
+import Documents from "./pages/Documents";
+import Invoices from "./pages/Invoices";
 
 const queryClient = new QueryClient();
 
@@ -49,11 +53,10 @@ const App = () => (
               
               {/* Protected routes based on ERD diagram */}
               <Route element={<ProtectedRoute />}>
-                {/* These would be added when implementing the dashboard */}
-                {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-                {/* <Route path="/shifts" element={<Shifts />} /> */}
-                {/* <Route path="/documents" element={<Documents />} /> */}
-                {/* <Route path="/invoices" element={<Invoices />} /> */}
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/shifts" element={<Shifts />} />
+                <Route path="/documents" element={<Documents />} />
+                <Route path="/invoices" element={<Invoices />} />
               </Route>
               
               {/* Handle special routes */}
