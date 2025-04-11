@@ -50,11 +50,12 @@ const Register = () => {
       
       // Update profile with first and last name if provided
       if (data?.user && (firstName || lastName)) {
+        const fullName = `${firstName} ${lastName}`.trim();
         const { error: profileError } = await supabase
           .from('profiles')
           .update({
-            first_name: firstName,
-            last_name: lastName
+            full_name: fullName,
+            role: 'user' // Setting default role
           })
           .eq('id', data.user.id);
           

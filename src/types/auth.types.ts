@@ -3,13 +3,9 @@ import type { Session, User, AuthResponse } from "@supabase/supabase-js";
 
 export interface Profile {
   id: string;
-  first_name: string | null;
-  last_name: string | null;
-  avatar_url: string | null;
-  phone: string | null;
-  bio: string | null;
-  website: string | null;
-  company: string | null;
+  full_name: string;
+  created_at?: string | null;
+  role: string;
 }
 
 export interface UserRole {
