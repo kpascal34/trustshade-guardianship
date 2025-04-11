@@ -3,13 +3,30 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { LogOut, UserCircle } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLocation } from "react-router-dom";
 
 const AuthNavItems = () => {
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAdmin } = useAuth();
+  const location = useLocation();
+  const isOnDashboard = location.pathname.startsWith('/dashboard');
 
   if (user) {
     return (
       <div className="flex items-center gap-4">
+        {isAdmin() && isOnDashboard && (
+          <span className="hidden md:inline-block text-sm text-blue-600 font-medium">
+            Admin Mode
+          </span>
+        )}
+        
         <span className="text-sm hidden md:inline-block">
           {user.email}
         </span>
