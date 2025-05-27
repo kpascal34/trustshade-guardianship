@@ -19,6 +19,13 @@ const About = () => {
         <meta name="description" content="Learn about Fortis Security, Yorkshire's trusted provider of professional security services across Yorkshire and Greater Manchester. Offering door supervision, manned guarding, and event security." />
         <meta name="keywords" content="about Fortis Security, professional security Yorkshire, security company Manchester, door supervision, event security" />
         <link rel="canonical" href="https://www.fortissecured.co.uk/about" />
+        <meta property="og:title" content="About Fortis Security | Professional Security in Yorkshire & Manchester" />
+        <meta property="og:description" content="Learn about Fortis Security, Yorkshire's trusted provider of professional security services across Yorkshire and Greater Manchester." />
+        <meta property="og:url" content="https://www.fortissecured.co.uk/about" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Fortis Security | Professional Security in Yorkshire & Manchester" />
+        <meta name="twitter:description" content="Learn about Fortis Security, Yorkshire's trusted provider of professional security services across Yorkshire and Greater Manchester." />
       </Helmet>
       
       <section className="container mx-auto px-4 py-16">

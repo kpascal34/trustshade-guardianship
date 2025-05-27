@@ -26,6 +26,13 @@ const Contact = () => {
         <meta name="description" content="Contact Fortis Security for professional security services in Yorkshire and Manchester. Get in touch for door supervision, manned guarding, and event security needs." />
         <meta name="keywords" content="contact security company, Yorkshire security contact, Manchester security contact, professional security services" />
         <link rel="canonical" href="https://www.fortissecured.co.uk/contact" />
+        <meta property="og:title" content="Contact Fortis Security | Yorkshire & Manchester Security Services" />
+        <meta property="og:description" content="Contact Fortis Security for professional security services in Yorkshire and Manchester." />
+        <meta property="og:url" content="https://www.fortissecured.co.uk/contact" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Fortis Security | Yorkshire & Manchester Security Services" />
+        <meta name="twitter:description" content="Contact Fortis Security for professional security services in Yorkshire and Manchester." />
       </Helmet>
       
       <section className="container mx-auto px-4 py-16">

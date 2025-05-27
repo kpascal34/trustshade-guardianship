@@ -4,15 +4,19 @@ Allow: /
 Allow: /about
 Allow: /services
 Allow: /contact
+Allow: /register
 Allow: /locations/
 Allow: /privacy-policy
 Allow: /terms-of-service
 Allow: /cookies-policy
 Allow: /faq
 
-# Disallow auth-related pages
+# Disallow auth-related pages except register
 Disallow: /login
-Disallow: /register
+Disallow: /dashboard
 
 # Sitemap location
 Sitemap: https://www.fortissecured.co.uk/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

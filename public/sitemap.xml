@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
@@ -5,21 +6,25 @@
     <loc>https://www.fortissecured.co.uk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   
   <!-- Service Detail Pages -->
@@ -27,21 +32,25 @@
     <loc>https://www.fortissecured.co.uk/services/door-supervision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/services/manned-guarding</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/services/event-security</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/services/risk-assessments</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   
   <!-- Location Pages -->
@@ -49,11 +58,13 @@
     <loc>https://www.fortissecured.co.uk/locations/yorkshire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/locations/manchester</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   
   <!-- Auth Pages -->
@@ -61,11 +72,13 @@
     <loc>https://www.fortissecured.co.uk/login</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/register</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   
   <!-- Legal Pages -->
@@ -73,20 +86,24 @@
     <loc>https://www.fortissecured.co.uk/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/cookies-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
   <url>
     <loc>https://www.fortissecured.co.uk/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <lastmod>2025-01-27</lastmod>
   </url>
 </urlset>
